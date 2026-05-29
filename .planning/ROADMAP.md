@@ -45,7 +45,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. "Formal invitation to follow" footer note appears at the bottom
   4. A divider line is visible between the couple names and the date block
   5. The hero photo fills the full viewport with no white bars or overflow
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 02-01-PLAN.md — SaveTheDatePage: full-bleed hero + scrim + bottom-anchored content block (all CONT copy)
 **UI hint**: yes
 
 ### Phase 3: Personalization & Countdown
@@ -92,7 +93,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete   | 2026-05-29 |
-| 2. Static Page | 0/TBD | Not started | - |
+| 2. Static Page | 0/1 | Not started | - |
 | 3. Personalization & Countdown | 0/TBD | Not started | - |
 | 4. Visuals & Animation | 0/TBD | Not started | - |
 | 5. Polish & Deploy | 0/TBD | Not started | - |
