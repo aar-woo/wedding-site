@@ -1,11 +1,7 @@
-import styles from './App.module.css'
+import SaveTheDatePage from './pages/SaveTheDatePage'
 
 function App() {
-  return (
-    <div className={styles.app}>
-      {/* Save the Date content — Phase 2+ */}
-    </div>
-  )
+  return <SaveTheDatePage />
 }
 
 export default App
