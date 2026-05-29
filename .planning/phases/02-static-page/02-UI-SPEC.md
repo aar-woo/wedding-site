@@ -55,10 +55,12 @@ Exceptions:
 
 All type is set in CSS Modules variables referencing `--font-display` and `--font-body` defined in `src/index.css`.
 
+Active weight set: {300, 400}
+
 | Role | Element | Font | Size | Weight | Line Height | Color | Letter Spacing | Notes |
 |------|---------|------|------|--------|-------------|-------|----------------|-------|
 | Display / Couple Names | `<h1>` | Cormorant Garamond | 72px desktop / 48px mobile | 300 (light) | 1.1 | `var(--gold-light)` = #D4B57A | 0.02em | Dominant focal point; italic optional but default roman |
-| Section Label | `<p>` | Jost | 11px | 500 | 1.0 | `var(--gold)` = #BF9B5A | 0.25em uppercase | "SAVE THE DATE" — all-caps tracked label |
+| Section Label | `<p>` | Jost | 11px | 400 | 1.0 | `var(--gold)` = #BF9B5A | 0.25em uppercase | "SAVE THE DATE" — all-caps tracked label; `text-transform: uppercase` + `letter-spacing: 0.25em` provide visual distinction without needing elevated weight |
 | Date | `<p>` | Cormorant Garamond | 28px desktop / 22px mobile | 400 | 1.3 | `var(--cream)` = #EAE0CB | 0.04em | "May 30, 2027" |
 | Location | `<p>` | Jost | 14px | 400 | 1.5 | `var(--cream)` = #EAE0CB | 0.12em | "Oahu, Hawaii" |
 | Footer note | `<p>` | Jost | 11px | 300 | 1.5 | `var(--muted)` = #72685A | 0.15em | "Formal invitation to follow" — subdued, bottom of viewport |
@@ -68,7 +70,7 @@ Source: CLAUDE.md (font roles and color assignments); sizes are opinionated defa
 ### Assumptions documented
 
 - Couple names at weight 300 (lightest Cormorant Garamond weight loaded) for maximum elegance at large display size. Executor may try weight 400 if 300 renders too thin on low-DPI screens.
-- "Save the Date" label treated as an uppercase Jost label (tracking 0.25em), consistent with the muted/uppercase-tracking-text role in CLAUDE.md.
+- "Save the Date" label treated as an uppercase Jost label (tracking 0.25em), consistent with the muted/uppercase-tracking-text role in CLAUDE.md. Weight 400 is used — `text-transform: uppercase` and `letter-spacing: 0.25em` already provide full visual distinction for this label role without needing weight 500.
 - Date and location use distinct fonts (display vs. body) to create visual hierarchy: date is the key fact (display serif), location is supporting context (body sans).
 
 ---
@@ -230,6 +232,7 @@ All assumptions were made because the scope excludes interactivity and CLAUDE.md
 | Assumption | Rationale | Override if |
 |-----------|-----------|-------------|
 | Couple names font-weight: 300 | Lightest loaded weight; maximally elegant at 72px display | Renders too thin on 1x screens → try weight 400 |
+| Section label font-weight: 400 | `text-transform: uppercase` + `letter-spacing: 0.25em` provide sufficient visual distinction; no need for weight 500, keeping active weight set to {300, 400} | — |
 | Scrim: 82% opacity at base | Ensures WCAG AA for cream text over real photography | Hero image is very dark → reduce to 65% |
 | Content block anchored bottom | Mimics print-invitation lower-third composition | Designer prefers centered → change to `align-items: center; justify-content: center` on `.app` |
 | Divider width: 48px | Proportional to content width; evokes invitation rule line | Too narrow → extend to 64px |
