@@ -32,7 +32,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Opening the site in a browser shows a page (no blank screen or console errors from missing router)
   2. Cormorant Garamond and Jost fonts render — no system font fallback visible
   3. CSS custom properties for all five palette colors (`--forest`, `--gold`, `--gold-light`, `--cream`, `--muted`) are defined and inherited site-wide
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 01-01-PLAN.md — Router wiring, design-token palette, and Google Fonts
 
 ### Phase 2: Static Page
 **Goal**: All wedding content is readable on screen — couple names, date, location, footer, and the hero photo filling the viewport
@@ -90,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/1 | Not started | - |
 | 2. Static Page | 0/TBD | Not started | - |
 | 3. Personalization & Countdown | 0/TBD | Not started | - |
 | 4. Visuals & Animation | 0/TBD | Not started | - |
