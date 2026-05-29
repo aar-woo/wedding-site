@@ -13,7 +13,7 @@ events portal.
 
 When a guest opens their link, they feel the warmth and elegance of the
 invitation immediately — a beautiful, personalized, smoothly-animated reveal of
-"Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
+"Rina & Aaron· May 30, 2027 · Oahu, Hawaii."
 
 ## Requirements
 
@@ -54,7 +54,7 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
   and the URL pattern. Treat `CLAUDE.md` as the binding implementation contract.
 - Hero image is already in the repo at `public/images/save-the-date-hero.png`
   (duplicate at `src/assets/hero.png`). Reference it as `/images/save-the-date-hero.png`.
-- Content is settled: couple = **Aaron & Rina**, date = **May 30, 2027**,
+- Content is settled: couple = **Rina & Aaron**, date = **May 30, 2027**,
   location line = **"Oahu, Hawaii"**, footer note = **"Formal invitation to follow"**.
 
 ## Constraints
@@ -68,19 +68,20 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 
 ## Key Decisions
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Scope = save-the-date only | Ship the announcement first; RSVP/details are later milestones | — Pending |
-| Use existing hero PNG as-is | Image already in repo; real photo confirmed | — Pending |
-| Default content (location "Oahu, Hawaii", footer "Formal invitation to follow") | User opted for sensible defaults; easy to swap later | — Pending |
-| Deploy target: Vercel | Zero-config static hosting for a Vite SPA | — Pending |
-| `CLAUDE.md` is the binding design contract | Detailed spec already authored; avoid re-deriving design | ✓ Good |
+| Decision                                                                        | Rationale                                                      | Outcome   |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------- |
+| Scope = save-the-date only                                                      | Ship the announcement first; RSVP/details are later milestones | — Pending |
+| Use existing hero PNG as-is                                                     | Image already in repo; real photo confirmed                    | — Pending |
+| Default content (location "Oahu, Hawaii", footer "Formal invitation to follow") | User opted for sensible defaults; easy to swap later           | — Pending |
+| Deploy target: Vercel                                                           | Zero-config static hosting for a Vite SPA                      | — Pending |
+| `CLAUDE.md` is the binding design contract                                      | Detailed spec already authored; avoid re-deriving design       | ✓ Good    |
 
 ## Evolution
 
 This document evolves at phase transitions and milestone boundaries.
 
 **After each phase transition** (via `/gsd:transition`):
+
 1. Requirements invalidated? → Move to Out of Scope with reason
 2. Requirements validated? → Move to Validated with phase reference
 3. New requirements emerged? → Add to Active
@@ -88,10 +89,12 @@ This document evolves at phase transitions and milestone boundaries.
 5. "What This Is" still accurate? → Update if drifted
 
 **After each milestone** (via `/gsd:complete-milestone`):
+
 1. Full review of all sections
 2. Core Value check — still the right priority?
 3. Audit Out of Scope — reasons still valid?
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-29 after Phase 1 (Foundation)*
+
+_Last updated: 2026-05-29 after Phase 1 (Foundation)_

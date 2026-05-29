@@ -1,7 +1,7 @@
 # Requirements: Wedding Save-the-Date — Aaron & Rina
 
 **Defined:** 2026-05-28
-**Core Value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
+**Core Value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Rina & Aaron· May 30, 2027 · Oahu, Hawaii."
 
 ## v1 Requirements
 
@@ -15,7 +15,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Content
 
-- [ ] **CONT-01**: Page displays the couple names "Aaron & Rina"
+- [ ] **CONT-01**: Page displays the couple names "Rina & Aaron"
 - [ ] **CONT-02**: Page displays a "Save the Date" label and the date "May 30, 2027"
 - [ ] **CONT-03**: Page displays the location line "Oahu, Hawaii"
 - [ ] **CONT-04**: Page displays the footer note "Formal invitation to follow"
@@ -78,53 +78,55 @@ Deferred to future release. Tracked but not in current roadmap.
 
 Explicitly excluded. Documented to prevent scope creep.
 
-| Feature | Reason |
-|---------|--------|
-| RSVP / response capture | Announcement-only for v1; needs a backend, deferred to a later milestone |
-| Backend / database / auth | Personalization is URL-param only; no guest list is stored |
-| Routing beyond one page | Phase 1 is a single screen per spec |
-| UI component libraries (shadcn, MUI, etc.) | Custom design only per spec |
-| Stored/managed guest list | Names come from the link, not a system of record |
+| Feature                                    | Reason                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------------------ |
+| RSVP / response capture                    | Announcement-only for v1; needs a backend, deferred to a later milestone |
+| Backend / database / auth                  | Personalization is URL-param only; no guest list is stored               |
+| Routing beyond one page                    | Phase 1 is a single screen per spec                                      |
+| UI component libraries (shadcn, MUI, etc.) | Custom design only per spec                                              |
+| Stored/managed guest list                  | Names come from the link, not a system of record                         |
 
 ## Traceability
 
 Which phases cover which requirements. Populated during roadmap creation.
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| FND-01 | Phase 1 | Complete |
-| FND-02 | Phase 1 | Complete |
-| FND-03 | Phase 1 | Complete |
-| CONT-01 | Phase 2 | Pending |
-| CONT-02 | Phase 2 | Pending |
-| CONT-03 | Phase 2 | Pending |
-| CONT-04 | Phase 2 | Pending |
-| CONT-05 | Phase 2 | Pending |
-| HERO-01 | Phase 2 | Pending |
-| PERS-01 | Phase 3 | Pending |
-| PERS-02 | Phase 3 | Pending |
-| PERS-03 | Phase 3 | Pending |
-| PERS-04 | Phase 3 | Pending |
-| CNT-01 | Phase 3 | Pending |
-| CNT-02 | Phase 3 | Pending |
-| DECO-01 | Phase 4 | Pending |
-| DECO-02 | Phase 4 | Pending |
-| DECO-03 | Phase 4 | Pending |
-| HERO-02 | Phase 4 | Pending |
-| HERO-03 | Phase 4 | Pending |
-| ANIM-01 | Phase 4 | Pending |
-| ANIM-02 | Phase 4 | Pending |
-| ANIM-03 | Phase 4 | Pending |
-| ANIM-04 | Phase 4 | Pending |
-| EXP-01 | Phase 5 | Pending |
-| EXP-02 | Phase 5 | Pending |
-| DEPLOY-01 | Phase 5 | Pending |
+| Requirement | Phase   | Status   |
+| ----------- | ------- | -------- |
+| FND-01      | Phase 1 | Complete |
+| FND-02      | Phase 1 | Complete |
+| FND-03      | Phase 1 | Complete |
+| CONT-01     | Phase 2 | Pending  |
+| CONT-02     | Phase 2 | Pending  |
+| CONT-03     | Phase 2 | Pending  |
+| CONT-04     | Phase 2 | Pending  |
+| CONT-05     | Phase 2 | Pending  |
+| HERO-01     | Phase 2 | Pending  |
+| PERS-01     | Phase 3 | Pending  |
+| PERS-02     | Phase 3 | Pending  |
+| PERS-03     | Phase 3 | Pending  |
+| PERS-04     | Phase 3 | Pending  |
+| CNT-01      | Phase 3 | Pending  |
+| CNT-02      | Phase 3 | Pending  |
+| DECO-01     | Phase 4 | Pending  |
+| DECO-02     | Phase 4 | Pending  |
+| DECO-03     | Phase 4 | Pending  |
+| HERO-02     | Phase 4 | Pending  |
+| HERO-03     | Phase 4 | Pending  |
+| ANIM-01     | Phase 4 | Pending  |
+| ANIM-02     | Phase 4 | Pending  |
+| ANIM-03     | Phase 4 | Pending  |
+| ANIM-04     | Phase 4 | Pending  |
+| EXP-01      | Phase 5 | Pending  |
+| EXP-02      | Phase 5 | Pending  |
+| DEPLOY-01   | Phase 5 | Pending  |
 
 **Coverage:**
+
 - v1 requirements: 27 total
 - Mapped to phases: 27 (roadmap complete)
 - Unmapped: 0
 
 ---
-*Requirements defined: 2026-05-28*
-*Last updated: 2026-05-28 after roadmap creation*
+
+_Requirements defined: 2026-05-28_
+_Last updated: 2026-05-28 after roadmap creation_
