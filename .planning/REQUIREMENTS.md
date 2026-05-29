@@ -15,11 +15,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Content
 
-- [ ] **CONT-01**: Page displays the couple names "Rina & Aaron"
-- [ ] **CONT-02**: Page displays a "Save the Date" label and the date "May 30, 2027"
-- [ ] **CONT-03**: Page displays the location line "Oahu, Hawaii"
-- [ ] **CONT-04**: Page displays the footer note "Formal invitation to follow"
-- [ ] **CONT-05**: A divider line separates the couple names from the date block
+- [x] **CONT-01**: Page displays the couple names "Rina & Aaron"
+- [x] **CONT-02**: Page displays a "Save the Date" label and the date "May 30, 2027"
+- [x] **CONT-03**: Page displays the location line "Oahu, Hawaii"
+- [x] **CONT-04**: Page displays the footer note "Formal invitation to follow"
+- [x] **CONT-05**: A divider line separates the couple names from the date block
 
 ### Personalization
 
@@ -30,7 +30,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Hero & Imagery
 
-- [ ] **HERO-01**: A full-bleed hero photo (`/images/save-the-date-hero.png`) fills the viewport via `object-fit: cover`
+- [x] **HERO-01**: A full-bleed hero photo (`/images/save-the-date-hero.png`) fills the viewport via `object-fit: cover`
 - [ ] **HERO-02**: The hero performs a subtle Ken Burns zoom (scale 1 → 1.08 over 20s, alternating)
 - [ ] **HERO-03**: The hero layer has a parallax scroll offset driven by Framer Motion `useScroll` + `useTransform` (`ParallaxImage` component)
 
@@ -95,12 +95,12 @@ Which phases cover which requirements. Populated during roadmap creation.
 | FND-01      | Phase 1 | Complete |
 | FND-02      | Phase 1 | Complete |
 | FND-03      | Phase 1 | Complete |
-| CONT-01     | Phase 2 | Pending  |
-| CONT-02     | Phase 2 | Pending  |
-| CONT-03     | Phase 2 | Pending  |
-| CONT-04     | Phase 2 | Pending  |
-| CONT-05     | Phase 2 | Pending  |
-| HERO-01     | Phase 2 | Pending  |
+| CONT-01     | Phase 2 | Complete |
+| CONT-02     | Phase 2 | Complete |
+| CONT-03     | Phase 2 | Complete |
+| CONT-04     | Phase 2 | Complete |
+| CONT-05     | Phase 2 | Complete |
+| HERO-01     | Phase 2 | Complete |
 | PERS-01     | Phase 3 | Pending  |
 | PERS-02     | Phase 3 | Pending  |
 | PERS-03     | Phase 3 | Pending  |

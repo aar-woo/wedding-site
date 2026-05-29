@@ -46,7 +46,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. A divider line is visible between the couple names and the date block
   5. The hero photo fills the full viewport with no white bars or overflow
 **Plans**: 1 plan
-- [ ] 02-01-PLAN.md — SaveTheDatePage: full-bleed hero + scrim + bottom-anchored content block (all CONT copy)
+- [x] 02-01-PLAN.md — SaveTheDatePage: full-bleed hero + scrim + bottom-anchored content block (all CONT copy)
 **UI hint**: yes
 
 ### Phase 3: Personalization & Countdown
