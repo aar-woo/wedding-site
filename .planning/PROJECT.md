@@ -19,7 +19,7 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Foundation canvas: BrowserRouter context, five design-token CSS variables, and Google Fonts (Cormorant + Jost) loaded with no system-font fallback — Phase 1 (FND-01/02/03)
 
 ### Active
 
@@ -43,9 +43,10 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 
 ## Context
 
-- Greenfield build on an existing minimal scaffold: Vite + React 18, with
-  `framer-motion` and `react-router-dom` already installed (initial commit only —
-  no features built yet).
+- Greenfield build on an existing minimal scaffold: Vite + React 19 (Router v7),
+  with `framer-motion` already installed. Note: the installed stack is React 19 /
+  React Router v7 — the router import is `react-router` (not `react-router-dom`),
+  superseding the React 18 / v6 language in `CLAUDE.md`. (Phase 1 finding.)
 - A detailed design spec already exists at the repo root in `CLAUDE.md`: it
   defines the design system, the exact 10-step load animation sequence, easing
   (`[0.22, 0.61, 0.36, 1]`), the components to build (`ParallaxImage`,
@@ -93,4 +94,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-28 after initialization*
+*Last updated: 2026-05-29 after Phase 1 (Foundation)*
