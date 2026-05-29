@@ -9,9 +9,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Foundation
 
-- [ ] **FND-01**: App is wrapped in `<BrowserRouter>` and renders a single save-the-date page
-- [ ] **FND-02**: Google Fonts (Cormorant Garamond + Jost) are loaded and applied; no system/Inter/Roboto fallback is used
-- [ ] **FND-03**: Design tokens (forest `#0B1610`, gold `#BF9B5A`, gold-light `#D4B57A`, cream `#EAE0CB`, muted `#72685A`) are defined as CSS Module / CSS variables and used everywhere — no inline design values
+- [x] **FND-01**: App is wrapped in `<BrowserRouter>` and renders a single save-the-date page
+- [x] **FND-02**: Google Fonts (Cormorant Garamond + Jost) are loaded and applied; no system/Inter/Roboto fallback is used
+- [x] **FND-03**: Design tokens (forest `#0B1610`, gold `#BF9B5A`, gold-light `#D4B57A`, cream `#EAE0CB`, muted `#72685A`) are defined as CSS Module / CSS variables and used everywhere — no inline design values
 
 ### Content
 
@@ -92,9 +92,9 @@ Which phases cover which requirements. Populated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FND-01 | Phase 1 | Pending |
-| FND-02 | Phase 1 | Pending |
-| FND-03 | Phase 1 | Pending |
+| FND-01 | Phase 1 | Complete |
+| FND-02 | Phase 1 | Complete |
+| FND-03 | Phase 1 | Complete |
 | CONT-01 | Phase 2 | Pending |
 | CONT-02 | Phase 2 | Pending |
 | CONT-03 | Phase 2 | Pending |

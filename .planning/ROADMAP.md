@@ -16,7 +16,7 @@ Vercel deployment.
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Design system, fonts, and router wired up
+- [x] **Phase 1: Foundation** - Design system, fonts, and router wired up (completed 2026-05-29)
 - [ ] **Phase 2: Static Page** - Hero photo and all wedding content visible on screen
 - [ ] **Phase 3: Personalization & Countdown** - Guest name from URL and live countdown timer
 - [ ] **Phase 4: Visuals & Animation** - Botanical SVG, brackets, Ken Burns, parallax, full entrance sequence
@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Cormorant Garamond and Jost fonts render — no system font fallback visible
   3. CSS custom properties for all five palette colors (`--forest`, `--gold`, `--gold-light`, `--cream`, `--muted`) are defined and inherited site-wide
 **Plans**: 1 plan
-- [ ] 01-01-PLAN.md — Router wiring, design-token palette, and Google Fonts
+- [x] 01-01-PLAN.md — Router wiring, design-token palette, and Google Fonts
 
 ### Phase 2: Static Page
 **Goal**: All wedding content is readable on screen — couple names, date, location, footer, and the hero photo filling the viewport
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/1 | Not started | - |
+| 1. Foundation | 1/1 | Complete   | 2026-05-29 |
 | 2. Static Page | 0/TBD | Not started | - |
 | 3. Personalization & Countdown | 0/TBD | Not started | - |
 | 4. Visuals & Animation | 0/TBD | Not started | - |
