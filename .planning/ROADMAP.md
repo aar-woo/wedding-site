@@ -59,7 +59,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Opening the site without `?to=` shows "For Our Beloved Guests" (fallback)
   4. When `?to=` is present, the browser tab title reads "Save the Date – For {name}"
   5. A live days / hours / minutes / seconds countdown to May 30, 2027 is visible and ticking
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 03-01-PLAN.md — useGuestName hook + GuestGreeting wired above the label (PERS-01..04)
+- [ ] 03-02-PLAN.md — CountdownTimer with per-tick AnimatePresence swap, wired below location (CNT-01, CNT-02)
 **UI hint**: yes
 
 ### Phase 4: Visuals & Animation
@@ -94,6 +96,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete   | 2026-05-29 |
 | 2. Static Page | 0/1 | Not started | - |
-| 3. Personalization & Countdown | 0/TBD | Not started | - |
+| 3. Personalization & Countdown | 0/2 | Not started | - |
 | 4. Visuals & Animation | 0/TBD | Not started | - |
 | 5. Polish & Deploy | 0/TBD | Not started | - |
