@@ -1,0 +1,14 @@
+.greeting {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  margin: 0 0 16px;
+}
+
+.name {
+  color: var(--gold-light);
+}
