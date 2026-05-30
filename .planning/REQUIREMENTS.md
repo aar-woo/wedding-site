@@ -49,8 +49,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Countdown
 
-- [ ] **CNT-01**: A live countdown to May 30, 2027 shows days / hours / minutes / seconds in a row (`CountdownTimer`)
-- [ ] **CNT-02**: Each countdown number animates individually when it ticks (AnimatePresence key swap)
+- [x] **CNT-01**: A live countdown to May 30, 2027 shows days / hours / minutes / seconds in a row (`CountdownTimer`)
+- [x] **CNT-02**: Each countdown number animates individually when it ticks (AnimatePresence key swap)
 
 ### Experience & Delivery
 
@@ -105,8 +105,8 @@ Which phases cover which requirements. Populated during roadmap creation.
 | PERS-02     | Phase 3 | Complete |
 | PERS-03     | Phase 3 | Complete |
 | PERS-04     | Phase 3 | Complete |
-| CNT-01      | Phase 3 | Pending  |
-| CNT-02      | Phase 3 | Pending  |
+| CNT-01      | Phase 3 | Complete |
+| CNT-02      | Phase 3 | Complete |
 | DECO-01     | Phase 4 | Pending  |
 | DECO-02     | Phase 4 | Pending  |
 | DECO-03     | Phase 4 | Pending  |

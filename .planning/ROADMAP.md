@@ -61,7 +61,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. A live days / hours / minutes / seconds countdown to May 30, 2027 is visible and ticking
 **Plans**: 2 plans
 - [x] 03-01-PLAN.md — useGuestName hook + GuestGreeting wired above the label (PERS-01..04)
-- [ ] 03-02-PLAN.md — CountdownTimer with per-tick AnimatePresence swap, wired below location (CNT-01, CNT-02)
+- [x] 03-02-PLAN.md — CountdownTimer with per-tick AnimatePresence swap, wired below location (CNT-01, CNT-02)
 **UI hint**: yes
 
 ### Phase 4: Visuals & Animation
