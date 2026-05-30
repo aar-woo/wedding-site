@@ -1,5 +1,6 @@
 import styles from "./SaveTheDatePage.module.css";
 import GuestGreeting from '../components/GuestGreeting.jsx';
+import CountdownTimer from '../components/CountdownTimer.jsx';
 
 function SaveTheDatePage() {
   return (
@@ -20,6 +21,7 @@ function SaveTheDatePage() {
           <div className={styles.divider} />
           <p className={styles.date}>May 30, 2027</p>
           <p className={styles.location}>Oahu, Hawaii</p>
+          <CountdownTimer />
           <p className={styles.footer}>Formal invitation to follow</p>
         </div>
       </div>
