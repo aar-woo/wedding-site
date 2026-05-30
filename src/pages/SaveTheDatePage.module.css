@@ -127,7 +127,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url("/images/sitting-engagement.png") center / cover no-repeat;
+    background: url("/images/sitting-engagement.webp") center / cover no-repeat;
   }
 
   /* Darkening wash so the background reads as ambience, not a competing image. */

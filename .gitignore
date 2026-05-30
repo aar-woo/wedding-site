@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Original full-size PNGs (optimized to WebP in public/images)
+image-originals/

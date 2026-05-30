@@ -1,6 +1,6 @@
 import styles from "./SaveTheDatePage.module.css";
-import GuestGreeting from '../components/GuestGreeting.jsx';
-import CountdownTimer from '../components/CountdownTimer.jsx';
+import GuestGreeting from "../components/GuestGreeting.jsx";
+import CountdownTimer from "../components/CountdownTimer.jsx";
 
 function SaveTheDatePage() {
   return (
@@ -9,7 +9,7 @@ function SaveTheDatePage() {
         <div className={styles.heroContainer}>
           <img
             className={styles.heroImage}
-            src="/images/save-the-date-hero.png"
+            src="/images/save-the-date-hero.webp"
             alt="Rina and Aaron's wedding in Oahu, Hawaii"
           />
         </div>
