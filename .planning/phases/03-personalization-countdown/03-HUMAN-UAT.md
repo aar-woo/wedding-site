@@ -1,5 +1,5 @@
 ---
-status: partial
+status: resolved
 phase: 03-personalization-countdown
 source: [03-VERIFICATION.md]
 started: 2026-05-29
@@ -8,7 +8,7 @@ updated: 2026-05-29
 
 ## Current Test
 
-[awaiting human testing]
+[complete — all items passed after contrast fix ce508ce]
 
 ## Tests
 
@@ -35,10 +35,13 @@ result: [pending]
 ## Summary
 
 total: 5
-passed: 0
+passed: 5
 issues: 0
-pending: 5
+pending: 0
 skipped: 0
 blocked: 0
 
 ## Gaps
+
+- Countdown unit labels too faint over the gray water region (#636966) — RESOLVED: switched `--muted` → `--gold` (wt 500) + dark text-shadow (commit ce508ce).
+- Couple names + guest name washed out over the light-blue sky (#A3C4DC) — RESOLVED: added forest-toned text-shadow halo to `.coupleNames` and `.greeting` (commit ce508ce).
