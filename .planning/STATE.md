@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-05-28)
 Phase: 4
 Plan: Not started
 Status: Phase complete — ready for verification
-Last activity: 2026-05-30
+Last activity: 2026-05-30 - Completed quick task 260529-os0: desktop hero greeting-card reshape
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -85,6 +85,12 @@ None yet.
 ### Blockers/Concerns
 
 None yet.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260529-os0 | Update the styling of the hero image card on desktop view to be a larger greeting card view, not iphone sized card. | 2026-05-30 | 64f6753 | [260529-os0-update-the-styling-of-the-hero-image-car](./quick/260529-os0-update-the-styling-of-the-hero-image-car/) |
 
 ## Session Continuity
 
