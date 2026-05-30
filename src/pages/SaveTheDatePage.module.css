@@ -3,6 +3,17 @@
   min-height: 100svh;
   overflow: hidden;
   background-color: var(--forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroFrame {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .heroContainer {
@@ -63,6 +74,7 @@
   color: var(--gold-light);
   letter-spacing: 0.02em;
   margin: 0 0 24px;
+  text-shadow: 0 2px 20px rgba(11, 22, 16, 0.72);
 }
 
 .divider {
@@ -100,4 +112,50 @@
   color: var(--muted);
   letter-spacing: 0.15em;
   margin: 0;
+}
+
+/* Larger screens: hero renders as a large greeting-card-shaped frame floating
+   over the sitting engagement photo background. */
+@media (min-width: 768px) {
+  .page {
+    padding: 32px;
+  }
+
+  /* Full-bleed background photo behind the hero card. */
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url("/images/sitting-engagement.png") center / cover no-repeat;
+  }
+
+  /* Darkening wash so the background reads as ambience, not a competing image. */
+  .page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 22, 16, 0.55),
+      rgba(11, 22, 16, 0.7)
+    );
+  }
+
+  .heroFrame {
+    width: auto;
+    min-height: 0;
+    height: min(88svh, 900px);
+    aspect-ratio: 5 / 7;
+    max-width: min(92vw, 680px);
+    border-radius: 20px;
+    box-shadow:
+      0 40px 90px -24px rgba(0, 0, 0, 0.65),
+      0 0 0 1px rgba(191, 155, 90, 0.25);
+  }
+
+  .contentBlock { padding: 0 56px 56px; }
+  .coupleNames { font-size: 84px; margin: 0 0 28px; }
+  .date { font-size: 32px; }
 }
