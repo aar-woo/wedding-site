@@ -23,10 +23,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Personalization
 
-- [ ] **PERS-01**: The `?to=` query param is read via `useSearchParams` and shown as "For [Guest Name]"
-- [ ] **PERS-02**: When `?to=` is absent, the page falls back to "Our Beloved Guests"
-- [ ] **PERS-03**: When `?to=` is present, `document.title` is set to "Save the Date – For {name}"
-- [ ] **PERS-04**: URL-encoded names render correctly (e.g. `?to=Mike+%26+Sarah` → "Mike & Sarah")
+- [x] **PERS-01**: The `?to=` query param is read via `useSearchParams` and shown as "For [Guest Name]"
+- [x] **PERS-02**: When `?to=` is absent, the page falls back to "Our Beloved Guests"
+- [x] **PERS-03**: When `?to=` is present, `document.title` is set to "Save the Date – For {name}"
+- [x] **PERS-04**: URL-encoded names render correctly (e.g. `?to=Mike+%26+Sarah` → "Mike & Sarah")
 
 ### Hero & Imagery
 
@@ -101,10 +101,10 @@ Which phases cover which requirements. Populated during roadmap creation.
 | CONT-04     | Phase 2 | Complete |
 | CONT-05     | Phase 2 | Complete |
 | HERO-01     | Phase 2 | Complete |
-| PERS-01     | Phase 3 | Pending  |
-| PERS-02     | Phase 3 | Pending  |
-| PERS-03     | Phase 3 | Pending  |
-| PERS-04     | Phase 3 | Pending  |
+| PERS-01     | Phase 3 | Complete |
+| PERS-02     | Phase 3 | Complete |
+| PERS-03     | Phase 3 | Complete |
+| PERS-04     | Phase 3 | Complete |
 | CNT-01      | Phase 3 | Pending  |
 | CNT-02      | Phase 3 | Pending  |
 | DECO-01     | Phase 4 | Pending  |
