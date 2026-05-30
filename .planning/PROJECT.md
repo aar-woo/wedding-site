@@ -21,6 +21,7 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 
 - ✓ Foundation canvas: BrowserRouter context, five design-token CSS variables, and Google Fonts (Cormorant + Jost) loaded with no system-font fallback — Phase 1 (FND-01/02/03)
 - ✓ Static save-the-date page: full-bleed hero photo + legibility scrim with bottom-anchored content (label, "Rina & Aaron", divider, date, location, footer) — Phase 2 (CONT-01..05, HERO-01)
+- ✓ Guest personalization (`?to=` greeting via `useGuestName`, fallback, personalized tab title) + live countdown to May 30 2027 with per-tick digit animation — Phase 3 (PERS-01..04, CNT-01/02)
 
 ### Active
 
@@ -98,4 +99,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-05-29 after Phase 2 (Static Page)_
+_Last updated: 2026-05-30 after Phase 3 (Personalization & Countdown)_
