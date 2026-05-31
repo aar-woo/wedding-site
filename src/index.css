@@ -1,15 +1,18 @@
 :root {
-  --forest:     #0B1610;
-  --gold:       #BF9B5A;
-  --gold-light: #D4B57A;
-  --cream:      #EAE0CB;
-  --muted:      #72685A;
+  --forest: #0b1610;
+  --gold: #bf9b5a;
+  --gold-dark: #8f6f33;
+  --gold-light: #d4b57a;
+  --cream: #eae0cb;
+  --muted: #72685a;
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Jost', system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

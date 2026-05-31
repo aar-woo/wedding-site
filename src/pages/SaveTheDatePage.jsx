@@ -66,13 +66,15 @@ function SaveTheDatePage() {
           <BotanicalSvg flipped />
         </div>
 
-        {/* Steps 4–10: content block with its own delayed internal stagger */}
+        {/* "Save the Date" — top-anchored header, separated from the bottom block */}
+        <motion.p className={`${styles.label} ${styles.topLabel}`} variants={fadeUpVariants}>Save the Date</motion.p>
+
+        {/* Content block with its own delayed internal stagger */}
         <motion.div className={styles.contentBlock} variants={contentContainerVariants}>
-          <motion.div variants={fadeUpVariants}>{/* step 4 */}
+          <motion.div variants={fadeUpVariants}>{/* greeting */}
             <GuestGreeting />
           </motion.div>
-          <motion.p className={styles.label} variants={fadeUpVariants}>Save the Date</motion.p>{/* step 5 */}
-          <motion.h1 className={styles.coupleNames} variants={coupleNamesVariants}>Rina &amp; Aaron</motion.h1>{/* step 6 */}
+          <motion.h1 className={styles.coupleNames} variants={coupleNamesVariants}>Rina &amp; Aaron</motion.h1>
           <motion.div
             className={styles.divider}
             variants={dividerVariants}
