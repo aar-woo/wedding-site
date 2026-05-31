@@ -22,16 +22,10 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 - ✓ Foundation canvas: BrowserRouter context, five design-token CSS variables, and Google Fonts (Cormorant + Jost) loaded with no system-font fallback — Phase 1 (FND-01/02/03)
 - ✓ Static save-the-date page: full-bleed hero photo + legibility scrim with bottom-anchored content (label, "Rina & Aaron", divider, date, location, footer) — Phase 2 (CONT-01..05, HERO-01)
 - ✓ Guest personalization (`?to=` greeting via `useGuestName`, fallback, personalized tab title) + live countdown to May 30 2027 with per-tick digit animation — Phase 3 (PERS-01..04, CNT-01/02)
+- ✓ Full motion layer: olive-branch `BotanicalSvg` + corner brackets drawing in via `pathLength`, Ken Burns hero zoom (CSS keyframes), and the 10-step orchestrated entrance sequence (variants + staggerChildren), with `prefers-reduced-motion` honored — Phase 4 (DECO-01/02/03, HERO-02, ANIM-01..04)
 
 ### Active
 
-- [ ] Single-page animated save-the-date renders the couple, date, and location
-- [ ] Guest name personalization via `?to=` URL param, with graceful fallback
-- [ ] Orchestrated entrance animation sequence (the spec's 10-step choreography)
-- [ ] Full-bleed hero photo with subtle Ken Burns motion + parallax on scroll
-- [ ] Botanical SVG line-art that draws itself in, plus corner bracket decorations
-- [ ] Live countdown to May 30, 2027 with per-digit tick animation
-- [ ] Design system applied exactly (forest/gold palette, Cormorant + Jost fonts)
 - [ ] Responsive and performant on mobile and desktop
 - [ ] Deployable as a static site to Vercel
 
@@ -99,4 +93,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-05-30 after Phase 3 (Personalization & Countdown)_
+_Last updated: 2026-05-31 after Phase 4 (Visuals & Animation) — full motion experience complete; parallax (HERO-03) dropped from v1_
