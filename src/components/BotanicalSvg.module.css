@@ -1,0 +1,19 @@
+.wrapper {
+  display: block;
+  width: 40px;
+  line-height: 0; /* kill inline-svg baseline gap */
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Mirror the entire branch horizontally for the right-hand instance.
+   Must live on the wrapper div, NOT on the motion.svg, so it never
+   collides with Framer Motion's transform pipeline (Pitfall 5). */
+.flipped {
+  transform: scaleX(-1);
+}

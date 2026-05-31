@@ -1,0 +1,23 @@
+.bracketsWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 3; /* above scrim (z-index 1), below/at content layer */
+  pointer-events: none;
+}
+
+.bracketsWrapper svg {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.topLeft     { top: 16px;    left: 16px; }
+.topRight    { top: 16px;    right: 16px; }
+.bottomLeft  { bottom: 16px; left: 16px; }
+.bottomRight { bottom: 16px; right: 16px; }
+
+/* Orient the single top-left L-shape to the other three corners. */
+.flipH    { transform: scaleX(-1); }
+.flipV    { transform: scaleY(-1); }
+.flipBoth { transform: scale(-1, -1); }
