@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Active
 status: verifying
-stopped_at: Completed 07-01-PLAN.md (datastore foundation)
-last_updated: "2026-05-31T19:40:16.846Z"
+stopped_at: Completed 07-03-PLAN.md (generate-links + check-link live run)
+last_updated: "2026-05-31T23:50:18.293Z"
 last_activity: 2026-05-31
 progress:
   total_phases: 10
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 11
   percent: 0
 ---
 
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 03-personalization-countdown P02 | 2min | 2 tasks | 3 files |
 | Phase 06 P01 | 4min | 3 tasks | 6 files |
 | Phase 07 P01 | 2m 22s | 3 tasks | 5 files |
+| Phase 07 P03 | 4 | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,8 @@ Recent decisions affecting current work:
 - [Phase 06]: GUEST_TOKEN_SECRET + DATABASE_URL never VITE_-prefixed; contract locked before Phase 7 link minting
 - [Phase 07]: Use deleted_at TIMESTAMPTZ (not is_active BOOLEAN) for soft-delete — self-documenting timestamp, idiomatic WHERE deleted_at IS NULL filter
 - [Phase 07]: node --env-file=.env.local over dotenv for zero-dep env loading (Node 20+ built-in, Node v23 installed)
+- [Phase 07]: No SITE_BASE_URL set — links use placeholder host; must regenerate links.csv after Phase 9 deployment
+- [Phase 07]: Soft-delete confirmed live: deleted_at set on removed CSV row, id and row preserved in Neon
 
 ### Pending Todos
 
@@ -110,6 +113,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-31T19:40:16.843Z
-Stopped at: Completed 07-01-PLAN.md (datastore foundation)
+Last session: 2026-05-31T23:50:18.290Z
+Stopped at: Completed 07-03-PLAN.md (generate-links + check-link live run)
 Resume file: None

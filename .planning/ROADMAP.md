@@ -119,8 +119,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Neither `guests.csv` nor any `.env` file containing the signing secret appears in `git status` or `git log` — `.gitignore` covers both
 **Plans**: 3 plans (2 waves)
 - [x] 07-01-PLAN.md — Deps + git-safety + .env.example + idempotent Neon migration (BACK-01, LINK-04)
-- [ ] 07-02-PLAN.md — Pure DB-free link helpers + node:test unit suite (BACK-01, LINK-04)
-- [ ] 07-03-PLAN.md — generate-links.js + check-link.js + live Neon run (BACK-01, LINK-04)
+- [x] 07-02-PLAN.md — Pure DB-free link helpers + node:test unit suite (BACK-01, LINK-04)
+- [x] 07-03-PLAN.md — generate-links.js + check-link.js + live Neon run (BACK-01, LINK-04)
 
 ### Phase 8: Frontend Hook & API Endpoint
 **Goal**: The site resolves guest identity entirely from the URL token with no network round-trip, and a validation endpoint exists that the future RSVP flow will reuse
