@@ -60,7 +60,7 @@
   font-family: var(--font-engravers);
   /* Fluid size so "Save the Date" stays on one line on narrow screens;
      caps at 42px so desktop is unchanged. nowrap guarantees a single line. */
-  font-size: clamp(20px, 8vw, 42px);
+  font-size: clamp(20px, 8vw, 32px);
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
@@ -89,7 +89,7 @@
    top of the hero frame, separated from the bottom-anchored content block. */
 .topGroup {
   position: absolute;
-  top: 60px;
+  top: 20px;
   left: 0;
   right: 0;
   z-index: 2;
@@ -99,7 +99,7 @@
 
 .coupleNames {
   font-family: var(--font-petite-caps);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
@@ -120,7 +120,7 @@
   font-size: 28px;
   font-weight: 400;
   line-height: 1.3;
-  color: var(--cream);
+  color: var(--gold-light);
   letter-spacing: 0.04em;
   margin: 0 0 16px;
 }
@@ -145,14 +145,14 @@
   margin: 0;
 }
 
-/* Ken Burns hero zoom — scale 1 → 1.08 over 20s, alternating.
+/* Ken Burns hero zoom — scale 1 → 1.18 over 20s, alternating (more pronounced).
    Guarded so it stills when OS "Reduce Motion" is on (HERO-02). */
 @keyframes kenBurns {
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.08);
+    transform: scale(1.18);
   }
 }
 
@@ -226,9 +226,5 @@
     box-shadow:
       0 40px 90px -24px rgba(0, 0, 0, 0.65),
       0 0 0 1px rgba(191, 155, 90, 0.25);
-  }
-
-  .date {
-    font-size: 32px;
   }
 }
