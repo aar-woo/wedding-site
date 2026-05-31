@@ -78,7 +78,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans (2 waves)
 - [x] 04-01-PLAN.md — BotanicalSvg olive-branch component (pathLength stagger, flipped) [DECO-02, DECO-03]
 - [x] 04-02-PLAN.md — CornerBrackets component (four corners, pathLength draw-in) [DECO-01]
-- [ ] 04-03-PLAN.md — SaveTheDatePage entrance orchestration + Ken Burns + MotionConfig [HERO-02, ANIM-01..04]
+- [x] 04-03-PLAN.md — SaveTheDatePage entrance orchestration + Ken Burns + MotionConfig [HERO-02, ANIM-01..04]
 **UI hint**: yes
 
 ### Phase 5: Polish & Deploy
