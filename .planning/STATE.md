@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Active
 status: verifying
-stopped_at: Phase 7 planned (3 plans, 2 waves)
-last_updated: "2026-05-31T19:32:01.022Z"
+stopped_at: Completed 07-01-PLAN.md (datastore foundation)
+last_updated: "2026-05-31T19:40:16.846Z"
 last_activity: 2026-05-31
 progress:
   total_phases: 10
   completed_phases: 5
   total_plans: 11
-  completed_plans: 8
+  completed_plans: 9
   percent: 0
 ---
 
@@ -57,6 +57,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 03-personalization-countdown P01 | 2min | 3 tasks | 4 files |
 | Phase 03-personalization-countdown P02 | 2min | 2 tasks | 3 files |
 | Phase 06 P01 | 4min | 3 tasks | 6 files |
+| Phase 07 P01 | 2m 22s | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -89,6 +90,8 @@ Recent decisions affecting current work:
 - [Phase 06]: HMAC-SHA256 via node:crypto (not jose/JWT) — zero-dep, sufficient for signing display names
 - [Phase 06]: Trust boundary: scripts/lib/ (Node+secret-bearing) vs src/lib/ (browser-safe, no secret)
 - [Phase 06]: GUEST_TOKEN_SECRET + DATABASE_URL never VITE_-prefixed; contract locked before Phase 7 link minting
+- [Phase 07]: Use deleted_at TIMESTAMPTZ (not is_active BOOLEAN) for soft-delete — self-documenting timestamp, idiomatic WHERE deleted_at IS NULL filter
+- [Phase 07]: node --env-file=.env.local over dotenv for zero-dep env loading (Node 20+ built-in, Node v23 installed)
 
 ### Pending Todos
 
@@ -107,6 +110,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-31T19:32:01.014Z
-Stopped at: Phase 7 planned (3 plans, 2 waves)
-Resume file: .planning/phases/07-datastore-schema-link-generation-tooling/07-01-PLAN.md
+Last session: 2026-05-31T19:40:16.843Z
+Stopped at: Completed 07-01-PLAN.md (datastore foundation)
+Resume file: None

@@ -69,11 +69,11 @@ Personalized Guest-Link Identity + RSVP Foundation. Replaces the open `?to=` per
 - [x] **LINK-01**: Each guest has a durable, unguessable per-guest link built on an opaque stable `id` (replaces the open `?to=` param); the `id` is the permanent identity a future RSVP reuses
 - [x] **LINK-02**: The guest's display name travels in the link as an HMAC-signed payload and is decoded client-side with no network round-trip (instant greeting)
 - [x] **LINK-03**: Invalid, tampered, or unknown links fall back gracefully to the "Our Beloved Guests" greeting (never an error screen)
-- [ ] **LINK-04**: A local link-generation script mints per-guest links from a guest list; the guest list and signing secret are never committed to the repo
+- [x] **LINK-04**: A local link-generation script mints per-guest links from a guest list; the guest list and signing secret are never committed to the repo
 
 ### Backend Foundation
 
-- [ ] **BACK-01**: A Neon Postgres datastore holds a guest record keyed on the opaque `id`, with nullable RSVP fields reserved so a future RSVP flow needs no migration
+- [x] **BACK-01**: A Neon Postgres datastore holds a guest record keyed on the opaque `id`, with nullable RSVP fields reserved so a future RSVP flow needs no migration
 - [ ] **BACK-02**: A Vercel serverless endpoint (Node runtime) validates/looks up a guest by `id` — the contract a future RSVP flow builds on
 - [ ] **BACK-03**: The signing secret and database URL are server-only environment variables (never `VITE_`-prefixed; never present in the client bundle)
 
@@ -143,8 +143,8 @@ Which phases cover which requirements. Populated during roadmap creation.
 | LINK-01     | Phase 6 | Complete |
 | LINK-02     | Phase 6 | Complete |
 | LINK-03     | Phase 6 | Complete |
-| LINK-04     | Phase 7 | Pending |
-| BACK-01     | Phase 7 | Pending |
+| LINK-04     | Phase 7 | Complete |
+| BACK-01     | Phase 7 | Complete |
 | BACK-02     | Phase 8 | Pending |
 | BACK-03     | Phase 8 | Pending |
 

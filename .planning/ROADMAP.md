@@ -118,7 +118,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A URL from the generated `links.csv` resolves to the correct guest name in the browser (end-to-end test via the Phase 6 token decode)
   4. Neither `guests.csv` nor any `.env` file containing the signing secret appears in `git status` or `git log` — `.gitignore` covers both
 **Plans**: 3 plans (2 waves)
-- [ ] 07-01-PLAN.md — Deps + git-safety + .env.example + idempotent Neon migration (BACK-01, LINK-04)
+- [x] 07-01-PLAN.md — Deps + git-safety + .env.example + idempotent Neon migration (BACK-01, LINK-04)
 - [ ] 07-02-PLAN.md — Pure DB-free link helpers + node:test unit suite (BACK-01, LINK-04)
 - [ ] 07-03-PLAN.md — generate-links.js + check-link.js + live Neon run (BACK-01, LINK-04)
 
@@ -159,7 +159,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 4. Visuals & Animation | 3/3 | Complete | — |
 | ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
-| 7. Datastore Schema & Link-Generation | 0/3 | Not started | — |
+| 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
 | 8. Frontend Hook & API Endpoint | 0/TBD | Not started | — |
 | 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
 
@@ -169,7 +169,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 
 **Goal:** Periodically re-trigger the olive-branch `BotanicalSvg` draw-in animation on a 7-second interval (loop the `pathLength` draw so the branches redraw every 7s) rather than animating only once on page load. Must stay within the `prefers-reduced-motion` guard (no looping redraw when reduced motion is requested).
 **Requirements:** TBD
-**Plans:** 1/1 plans complete
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] TBD (promote with /gsd:review-backlog when ready)
