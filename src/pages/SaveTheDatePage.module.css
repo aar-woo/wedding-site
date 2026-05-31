@@ -58,7 +58,7 @@
 
 .label {
   font-family: var(--font-body);
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1;
   color: var(--gold-dark);
@@ -68,11 +68,11 @@
   text-shadow: 0 2px 20px rgba(11, 22, 16, 0.72);
 }
 
-/* Top-anchored placement for the "Save the Date" header — pinned to the very
+/* Top header group (Save the Date → divider → couple names) — pinned near the
    top of the hero frame, separated from the bottom-anchored content block. */
-.topLabel {
+.topGroup {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   right: 0;
   z-index: 2;

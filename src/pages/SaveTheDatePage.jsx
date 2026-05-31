@@ -66,20 +66,22 @@ function SaveTheDatePage() {
           <BotanicalSvg flipped />
         </div>
 
-        {/* "Save the Date" — top-anchored header, separated from the bottom block */}
-        <motion.p className={`${styles.label} ${styles.topLabel}`} variants={fadeUpVariants}>Save the Date</motion.p>
+        {/* Top header group — top to bottom: Save the Date → divider → couple names */}
+        <motion.div className={styles.topGroup} variants={contentContainerVariants}>
+          <motion.p className={styles.label} variants={fadeUpVariants}>Save the Date</motion.p>
+          <motion.div
+            className={styles.divider}
+            variants={dividerVariants}
+            style={{ transformOrigin: 'center' }}
+          />{/* scaleX from center */}
+          <motion.h1 className={styles.coupleNames} variants={coupleNamesVariants}>Rina &amp; Aaron</motion.h1>
+        </motion.div>
 
         {/* Content block with its own delayed internal stagger */}
         <motion.div className={styles.contentBlock} variants={contentContainerVariants}>
           <motion.div variants={fadeUpVariants}>{/* greeting */}
             <GuestGreeting />
           </motion.div>
-          <motion.h1 className={styles.coupleNames} variants={coupleNamesVariants}>Rina &amp; Aaron</motion.h1>
-          <motion.div
-            className={styles.divider}
-            variants={dividerVariants}
-            style={{ transformOrigin: 'center' }}
-          />{/* step 7 — scaleX from center */}
           <motion.p className={styles.date} variants={fadeUpVariants}>May 30, 2027</motion.p>{/* step 8 */}
           <motion.p className={styles.location} variants={fadeUpVariants}>Oahu, Hawaii</motion.p>{/* step 9 */}
           <motion.div variants={fadeUpVariants}><CountdownTimer /></motion.div>{/* step 10a */}
