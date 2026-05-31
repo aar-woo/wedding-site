@@ -66,9 +66,9 @@ Personalized Guest-Link Identity + RSVP Foundation. Replaces the open `?to=` per
 
 ### Guest Identity & Links
 
-- [ ] **LINK-01**: Each guest has a durable, unguessable per-guest link built on an opaque stable `id` (replaces the open `?to=` param); the `id` is the permanent identity a future RSVP reuses
-- [ ] **LINK-02**: The guest's display name travels in the link as an HMAC-signed payload and is decoded client-side with no network round-trip (instant greeting)
-- [ ] **LINK-03**: Invalid, tampered, or unknown links fall back gracefully to the "Our Beloved Guests" greeting (never an error screen)
+- [x] **LINK-01**: Each guest has a durable, unguessable per-guest link built on an opaque stable `id` (replaces the open `?to=` param); the `id` is the permanent identity a future RSVP reuses
+- [x] **LINK-02**: The guest's display name travels in the link as an HMAC-signed payload and is decoded client-side with no network round-trip (instant greeting)
+- [x] **LINK-03**: Invalid, tampered, or unknown links fall back gracefully to the "Our Beloved Guests" greeting (never an error screen)
 - [ ] **LINK-04**: A local link-generation script mints per-guest links from a guest list; the guest list and signing secret are never committed to the repo
 
 ### Backend Foundation
@@ -140,9 +140,9 @@ Which phases cover which requirements. Populated during roadmap creation.
 | EXP-01      | Phase 9 | Pending |
 | EXP-02      | Phase 9 | Pending |
 | DEPLOY-01   | Phase 9 | Pending |
-| LINK-01     | Phase 6 | Pending |
-| LINK-02     | Phase 6 | Pending |
-| LINK-03     | Phase 6 | Pending |
+| LINK-01     | Phase 6 | Complete |
+| LINK-02     | Phase 6 | Complete |
+| LINK-03     | Phase 6 | Complete |
 | LINK-04     | Phase 7 | Pending |
 | BACK-01     | Phase 7 | Pending |
 | BACK-02     | Phase 8 | Pending |
