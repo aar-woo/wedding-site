@@ -37,6 +37,7 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 - ✓ Static save-the-date page: full-bleed hero photo + legibility scrim with bottom-anchored content (label, "Rina & Aaron", divider, date, location, footer) — Phase 2 (CONT-01..05, HERO-01)
 - ✓ Guest personalization (`?to=` greeting via `useGuestName`, fallback, personalized tab title) + live countdown to May 30 2027 with per-tick digit animation — Phase 3 (PERS-01..04, CNT-01/02)
 - ✓ Full motion layer: olive-branch `BotanicalSvg` + corner brackets drawing in via `pathLength`, Ken Burns hero zoom (CSS keyframes), and the 10-step orchestrated entrance sequence (variants + staggerChildren), with `prefers-reduced-motion` honored — Phase 4 (DECO-01/02/03, HERO-02, ANIM-01..04)
+- ✓ Durable guest-link identity **contract + library**: locked token spec (`/i/<id>?t=<payload>.<hmac>`, payload `{id,name,iat}`), `node:crypto` HMAC-SHA256 sign/verify lib, secret-free browser decode util (decode-only + graceful fallback), `VITE_`-leak-proof env discipline — Phase 6 (LINK-01/02/03). _Live wiring lands in Phase 8._
 
 ### Active (v2.0)
 
@@ -111,4 +112,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-05-31 — started milestone v2.0 (Personalized Guest-Link Identity + RSVP Foundation); v1.0 Phase 5 polish + deploy absorbed into v2.0_
+_Last updated: 2026-05-31 after Phase 6 (Identity Token Contract) — durable-link token contract + sign/verify lib locked and tested (LINK-01/02/03)_
