@@ -79,22 +79,25 @@ function SaveTheDatePage() {
         <div className={styles.scrim} />
 
         {/* Act 2: decorations group — corner brackets + botanicals draw in together */}
-        <motion.div className={styles.decorations} variants={decorationsVariants}>
+        <motion.div
+          className={styles.decorations}
+          variants={decorationsVariants}
+        >
           <CornerBrackets />
-          <motion.div className={styles.botanicalPair} variants={passthroughVariants}>
+          <motion.div
+            className={styles.botanicalPair}
+            variants={passthroughVariants}
+          >
             <BotanicalSvg />
             <BotanicalSvg flipped />
           </motion.div>
         </motion.div>
 
         {/* Act 1: top header group — top to bottom: Save the Date → divider → couple names */}
-        <motion.div
-          className={styles.topGroup}
-          variants={topGroupVariants}
-        >
+        <motion.div className={styles.topGroup} variants={topGroupVariants}>
           <motion.p className={styles.label} variants={fadeUpVariants}>
             <span className={styles.wordEngravers}>Save</span>{" "}
-            <span className={styles.wordScript}>The</span>{" "}
+            <span className={styles.wordScript}>the</span>{" "}
             <span className={styles.wordEngravers}>Date</span>
           </motion.p>
           <motion.div
