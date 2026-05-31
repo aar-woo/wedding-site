@@ -75,7 +75,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The botanical branch SVG draws its strokes progressively, with branches staggering rather than appearing all at once; strokes are gold with no fills except terminal dots
   4. The hero photo performs a Ken Burns zoom (scale 1 → 1.08) on a 20-second loop (parallax dropped — see scope note)
   5. Each countdown digit that changes animates individually (old number exits, new number enters via AnimatePresence)
-**Plans**: TBD
+**Plans**: 3 plans (2 waves)
+- [ ] 04-01-PLAN.md — BotanicalSvg olive-branch component (pathLength stagger, flipped) [DECO-02, DECO-03]
+- [ ] 04-02-PLAN.md — CornerBrackets component (four corners, pathLength draw-in) [DECO-01]
+- [ ] 04-03-PLAN.md — SaveTheDatePage entrance orchestration + Ken Burns + MotionConfig [HERO-02, ANIM-01..04]
 **UI hint**: yes
 
 ### Phase 5: Polish & Deploy
@@ -98,5 +101,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 1/1 | Complete   | 2026-05-29 |
 | 2. Static Page | 0/1 | Not started | - |
 | 3. Personalization & Countdown | 1/2 | In Progress|  |
-| 4. Visuals & Animation | 0/TBD | Not started | - |
+| 4. Visuals & Animation | 0/3 | Not started | - |
 | 5. Polish & Deploy | 0/TBD | Not started | - |
