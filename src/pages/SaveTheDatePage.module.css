@@ -58,9 +58,12 @@
 
 .label {
   font-family: var(--font-engravers);
-  font-size: 48px;
+  /* Fluid size so "Save the Date" stays on one line on narrow screens;
+     caps at 42px so desktop is unchanged. nowrap guarantees a single line. */
+  font-size: clamp(20px, 8vw, 42px);
   font-weight: 500;
   line-height: 1;
+  white-space: nowrap;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -91,7 +94,7 @@
   right: 0;
   z-index: 2;
   text-align: center;
-  padding: 48px 28px 0;
+  padding: 48px 12px 0;
 }
 
 .coupleNames {
@@ -108,7 +111,7 @@
 .divider {
   width: 48px;
   height: 1px;
-  background-color: var(--gold);
+  background-color: #ffffff;
   margin: 24px auto;
 }
 
