@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Personalized Guest-Link Identity + RSVP Foundation
-status: defining_requirements
-stopped_at: "Milestone v2.0 started — defining requirements"
-last_updated: "2026-05-31T03:45:35.199Z"
-last_activity: 2026-05-31
+status: roadmap_ready
+stopped_at: "v2.0 roadmap created — Phase 6 ready to plan"
+last_updated: "2026-05-30T00:00:00.000Z"
+last_activity: 2026-05-30
 progress:
-  total_phases: 6
+  total_phases: 9
   completed_phases: 4
   total_plans: 7
   completed_plans: 7
@@ -18,25 +18,25 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-28)
+See: .planning/PROJECT.md (updated 2026-05-31)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
 **Current focus:** Milestone v2.0 — Personalized Guest-Link Identity + RSVP Foundation
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 6 — Identity Token Contract (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-05-31 — Milestone v2.0 started
+Status: Roadmap created; ready to plan Phase 6
+Last activity: 2026-05-30 — v2.0 roadmap written (Phases 6–9)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 complete)
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
+- Total plans completed: 0 (v2.0)
 - Average duration: —
 - Total execution time: —
 
@@ -77,14 +77,22 @@ Recent decisions affecting current work:
 - [Phase 03-personalization-countdown]: GuestGreeting renders in resting state only — no Framer Motion animation deferred to Phase 4
 - [Phase 03-personalization-countdown]: AnimatePresence mode=popLayout with key={value} for per-tick digit swap; numberCell with overflow:hidden prevents layout jumps
 - [Phase 03-personalization-countdown]: CountdownTimer frozen at zeros when diff<=0 — no negative display
+- [v2.0 milestone]: Datastore: Neon Postgres (Vercel Marketplace, no inactivity pause, relational for future RSVP columns)
+- [v2.0 milestone]: Greeting scheme: signed name in link — opaque stable nanoid `id` + HMAC-SHA256 signed display-name payload; client decodes name with NO network round-trip
+- [v2.0 milestone]: Backend: Vercel serverless functions via /api (Node runtime, NOT Edge — deprecated)
+- [v2.0 milestone]: Link generation: local Node script only; guest list + signing secret NEVER committed
+- [v2.0 milestone]: Security: signing secret (GUEST_TOKEN_SECRET) + DB URL are server-only env vars, never VITE_-prefixed
+- [v2.0 milestone]: URL shape: /i/<nanoid>?t=<base64url-payload>.<base64url-hmac> — locked before any code; changing it forces re-issue of all guest links
+- [v2.0 milestone]: vercel.json: /api passthrough rule first, then /(.*) SPA catch-all — order is critical (catch-all-first intercepts all /api/ requests)
+- [v2.0 milestone]: Phase 5 (Polish & Deploy) superseded — EXP-01, EXP-02, DEPLOY-01 absorbed into v2.0 Phases 8–9
 
 ### Pending Todos
 
-None yet.
+- Plan Phase 6: Identity Token Contract (next step)
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ### Quick Tasks Completed
 
@@ -95,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-05-31T03:23:39.210Z
-Stopped at: 04-03: Tasks 1-3 complete, paused at checkpoint:human-verify (Task 4)
+Last session: 2026-05-30T00:00:00.000Z
+Stopped at: v2.0 roadmap created — Phases 6–9 ready; next: /gsd:plan-phase 6
 Resume file: None

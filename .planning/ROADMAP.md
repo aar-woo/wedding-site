@@ -2,11 +2,9 @@
 
 ## Overview
 
-Five phases take the site from a bare Vite scaffold to a deployed, animated,
-guest-personalized save-the-date. Each phase delivers a coherent capability:
-foundation wiring, then static content on screen, then personalization and
-countdown, then the full motion/visual layer, then responsive polish and
-Vercel deployment.
+**v1.0 (Phases 1–4):** Five phases took the site from a bare Vite scaffold to a fully-animated, guest-personalized save-the-date SPA. Phases 1–4 are complete. Phase 5 was never executed and is superseded by v2.0.
+
+**v2.0 (Phases 6–9):** Replaces the open `?to=` param with durable per-guest identity backed by Neon Postgres, adds a Vercel serverless foundation for future RSVP, and ships the site live with responsive polish and durable personalized links.
 
 ## Phases
 
@@ -16,11 +14,20 @@ Vercel deployment.
 
 Decimal phases appear between their surrounding integers in numeric order.
 
+### v1.0 — Complete
+
 - [x] **Phase 1: Foundation** - Design system, fonts, and router wired up (completed 2026-05-29)
-- [ ] **Phase 2: Static Page** - Hero photo and all wedding content visible on screen
-- [ ] **Phase 3: Personalization & Countdown** - Guest name from URL and live countdown timer
-- [ ] **Phase 4: Visuals & Animation** - Botanical SVG, brackets, Ken Burns, parallax, full entrance sequence
-- [ ] **Phase 5: Polish & Deploy** - Responsive layout, performance, and live on Vercel
+- [x] **Phase 2: Static Page** - Hero photo and all wedding content visible on screen (completed)
+- [x] **Phase 3: Personalization & Countdown** - Guest name from URL and live countdown timer (completed)
+- [x] **Phase 4: Visuals & Animation** - Botanical SVG, brackets, Ken Burns, full entrance sequence (completed)
+- ~~**Phase 5: Polish & Deploy**~~ — **Superseded by v2.0** (responsive polish + deploy folded into v2.0 Phases 8–9; EXP-01, EXP-02, DEPLOY-01 carried forward)
+
+### v2.0 — Active
+
+- [ ] **Phase 6: Identity Token Contract** - URL shape, signed token format, env var naming, and token sign/verify library locked before any code is committed
+- [ ] **Phase 7: Datastore Schema & Link-Generation Tooling** - Neon Postgres provisioned, guest schema migrated, local script mints real shareable links
+- [ ] **Phase 8: Frontend Hook & API Endpoint** - Guest-name hook updated to parse signed token; Vercel serverless GET endpoint wired; vercel.json deployed
+- [ ] **Phase 9: Mobile Polish & Deploy** - Responsive layout verified on mobile, site deployed live to Vercel with durable personalized links
 
 ## Phase Details
 
@@ -82,27 +89,75 @@ Decimal phases appear between their surrounding integers in numeric order.
 **UI hint**: yes
 
 ### Phase 5: Polish & Deploy
-**Goal**: The site is production-ready — responsive, smooth on mobile, and live at a Vercel URL
-**Depends on**: Phase 4
+~~**Goal**: The site is production-ready — responsive, smooth on mobile, and live at a Vercel URL~~
+**Status**: **Superseded by v2.0** — responsive polish (EXP-01, EXP-02) and Vercel deployment (DEPLOY-01) fold into v2.0 Phases 8–9, which deploy with durable personalized links rather than the open `?to=` scheme. This phase was never executed.
+**Requirements carried forward**: EXP-01 → Phase 9, EXP-02 → Phase 9, DEPLOY-01 → Phase 9
+**Plans**: None executed
+
+---
+
+### Phase 6: Identity Token Contract
+**Goal**: The URL shape, token payload format, env var naming, and sign/verify library are locked and tested before any dependent code is written — changing these after links are issued forces re-minting every URL
+**Depends on**: Phase 4 (v1.0 complete — SPA exists to receive durable links)
+**Requirements**: LINK-01, LINK-02, LINK-03
+**Success Criteria** (what must be TRUE):
+  1. A documented URL shape (`/i/<nanoid>?t=<base64url-payload>.<base64url-hmac>`) and token payload schema (`{ id, name, iat }`) are written down and locked — no fields added or removed later without a deliberate re-issue decision
+  2. `scripts/lib/token.js` can produce a signed token from a guest record and verify it — `verify(sign(payload)) === true`, and a tampered payload returns false
+  3. Running `grep -r "VITE_" .env* src/` produces no secret-named matches — env var naming convention (`GUEST_TOKEN_SECRET`, `DATABASE_URL`, no `VITE_` prefix) is established in writing before the first `api/` file is created
+  4. Navigating to a manually-crafted URL with a valid token shows the correct guest name; navigating with a missing or malformed token falls back to "Our Beloved Guests" with no error screen
+**Plans**: TBD
+
+### Phase 7: Datastore Schema & Link-Generation Tooling
+**Goal**: Guests can receive a real shareable link — the Neon Postgres guest table exists, and the local script can mint a batch of valid, durable, personalized URLs from a CSV
+**Depends on**: Phase 6
+**Requirements**: BACK-01, LINK-04
+**Success Criteria** (what must be TRUE):
+  1. A `guests` table exists in Neon Postgres with `id TEXT PRIMARY KEY` (nanoid, 21 chars), `display_name`, `created_at`, `first_seen_at`, and nullable RSVP stub columns (`rsvp_status`, `rsvp_count`, `rsvp_submitted_at`) — no migration needed when RSVP ships
+  2. Running `node scripts/generate-links.js` against a test CSV inserts guest rows into the DB and outputs a `links.csv` with one valid personalized URL per row
+  3. A URL from the generated `links.csv` resolves to the correct guest name in the browser (end-to-end test via the Phase 6 token decode)
+  4. Neither `guests.csv` nor any `.env` file containing the signing secret appears in `git status` or `git log` — `.gitignore` covers both
+**Plans**: TBD
+
+### Phase 8: Frontend Hook & API Endpoint
+**Goal**: The site resolves guest identity entirely from the URL token with no network round-trip, and a validation endpoint exists that the future RSVP flow will reuse
+**Depends on**: Phase 7
+**Requirements**: BACK-02, BACK-03
+**Success Criteria** (what must be TRUE):
+  1. Opening a generated guest link (`/i/<id>?t=<token>`) shows "For [Guest Name]" instantly — no loading state, no API call on page load
+  2. `GET /api/guest/:id` returns `{ id, displayName }` with HTTP 200 for a valid known guest, and HTTP 404 for an unknown or invalid id
+  3. Running `grep -r "VITE_" .env* src/` returns zero results for `GUEST_TOKEN_SECRET` or `DATABASE_URL` — secrets are present only in Vercel env vars and `.env.local`, never in the Vite client bundle
+  4. `vercel.json` correctly routes `/api/*` to serverless functions before the SPA catch-all — navigating directly to `/i/<id>?t=<token>` in a fresh browser tab shows the personalized page, not a 404
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 9: Mobile Polish & Deploy
+**Goal**: Every guest, on any device, gets the full keepsake experience the moment they open their link — and that link is live on Vercel
+**Depends on**: Phase 8
 **Requirements**: EXP-01, EXP-02, DEPLOY-01
 **Success Criteria** (what must be TRUE):
-  1. On a phone-sized viewport, all content is legible and nothing overflows or is clipped
-  2. The entrance animations run without visible jank on a mid-range mobile device
-  3. `vite build` produces a clean static bundle and the site is accessible at a live Vercel URL
+  1. On a 375px-wide mobile viewport, all content is legible, nothing overflows or is clipped, and the countdown is readable without horizontal scrolling
+  2. The full entrance animation sequence runs without visible jank on a mid-range mobile device (no dropped frames on the botanical draw-in or countdown tick)
+  3. The site is accessible at a live `vercel.app` URL, served from a Git-connected Vercel project, with the Neon DB integration and `GUEST_TOKEN_SECRET` configured as production environment variables
+  4. At least one real generated guest link (from `links.csv`) opens in a browser, shows the personalized greeting, and the `GET /api/guest/:id` endpoint returns 200 — the full v2.0 stack verified end-to-end in production
 **Plans**: TBD
+**UI hint**: yes
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 8 → 9.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/1 | Complete   | 2026-05-29 |
-| 2. Static Page | 0/1 | Not started | - |
-| 3. Personalization & Countdown | 1/2 | In Progress|  |
-| 4. Visuals & Animation | 0/3 | Not started | - |
-| 5. Polish & Deploy | 0/TBD | Not started | - |
+| 1. Foundation | 1/1 | Complete | 2026-05-29 |
+| 2. Static Page | 1/1 | Complete | — |
+| 3. Personalization & Countdown | 2/2 | Complete | — |
+| 4. Visuals & Animation | 3/3 | Complete | — |
+| ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
+| 6. Identity Token Contract | 0/TBD | Not started | — |
+| 7. Datastore Schema & Link-Generation | 0/TBD | Not started | — |
+| 8. Frontend Hook & API Endpoint | 0/TBD | Not started | — |
+| 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
 
 ## Backlog
 

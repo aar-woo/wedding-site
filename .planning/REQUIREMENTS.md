@@ -137,24 +137,24 @@ Which phases cover which requirements. Populated during roadmap creation.
 | ANIM-02     | Phase 4 | Complete |
 | ANIM-03     | Phase 4 | Complete |
 | ANIM-04     | Phase 4 | Complete |
-| EXP-01      | v2.0 (pending roadmap) | Pending |
-| EXP-02      | v2.0 (pending roadmap) | Pending |
-| DEPLOY-01   | v2.0 (pending roadmap) | Pending |
-| LINK-01     | v2.0 (pending roadmap) | Pending |
-| LINK-02     | v2.0 (pending roadmap) | Pending |
-| LINK-03     | v2.0 (pending roadmap) | Pending |
-| LINK-04     | v2.0 (pending roadmap) | Pending |
-| BACK-01     | v2.0 (pending roadmap) | Pending |
-| BACK-02     | v2.0 (pending roadmap) | Pending |
-| BACK-03     | v2.0 (pending roadmap) | Pending |
+| EXP-01      | Phase 9 | Pending |
+| EXP-02      | Phase 9 | Pending |
+| DEPLOY-01   | Phase 9 | Pending |
+| LINK-01     | Phase 6 | Pending |
+| LINK-02     | Phase 6 | Pending |
+| LINK-03     | Phase 6 | Pending |
+| LINK-04     | Phase 7 | Pending |
+| BACK-01     | Phase 7 | Pending |
+| BACK-02     | Phase 8 | Pending |
+| BACK-03     | Phase 8 | Pending |
 
 **Coverage:**
 
 - v1.0 requirements: 27 (Phases 1–4 complete; EXP-01/EXP-02/DEPLOY-01 carried into v2.0)
 - v2.0 milestone requirements: 10 (LINK-01..04, BACK-01..03, + carried EXP-01/EXP-02/DEPLOY-01)
-- Mapping to v2.0 phases: pending roadmap
+- v2.0 mapping: 10/10 requirements mapped across Phases 6–9
 
 ---
 
 _Requirements defined: 2026-05-28_
-_Last updated: 2026-05-31 — added v2.0 milestone requirements (Guest-Link Identity + RSVP Foundation); marked Phase 4 requirements complete_
+_Last updated: 2026-05-30 — v2.0 roadmap created; all 10 v2.0 requirements assigned to Phases 6–9_
