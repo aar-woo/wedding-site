@@ -1,9 +1,9 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: executing
-stopped_at: "04-03: Tasks 1-3 complete, paused at checkpoint:human-verify (Task 4)"
+milestone: v2.0
+milestone_name: Personalized Guest-Link Identity + RSVP Foundation
+status: defining_requirements
+stopped_at: "Milestone v2.0 started — defining requirements"
 last_updated: "2026-05-31T03:45:35.199Z"
 last_activity: 2026-05-31
 progress:
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-28)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
-**Current focus:** Phase 04 — visuals-animation
+**Current focus:** Milestone v2.0 — Personalized Guest-Link Identity + RSVP Foundation
 
 ## Current Position
 
-Phase: 999.1
-Plan: Not started
-Status: Executing Phase 04
-Last activity: 2026-05-31 - Completed quick task 260530-oto: Move "Save the Date" to top of hero
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-05-31 — Milestone v2.0 started
 
 Progress: [░░░░░░░░░░] 0%
 

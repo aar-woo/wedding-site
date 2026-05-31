@@ -15,6 +15,20 @@ When a guest opens their link, they feel the warmth and elegance of the
 invitation immediately — a beautiful, personalized, smoothly-animated reveal of
 "Rina & Aaron· May 30, 2027 · Oahu, Hawaii."
 
+## Current Milestone: v2.0 Personalized Guest-Link Identity + RSVP Foundation
+
+**Goal:** Replace the open `?to=` greeting with a durable, hard-to-self-edit per-guest link backed by persistent identity, lay the backend/datastore foundation a future RSVP flow will reuse, and deploy the save-the-date live on Vercel with those durable links.
+
+**Target features:**
+- Durable per-guest link identity — opaque, stable `id` in the URL (replaces open `?to=`); the same link later carries RSVP
+- Greeting resolves from the link without exposing a public guest list (display name encoded in the link)
+- Backend + datastore foundation (Vercel serverless + datastore — choice TBD in research) keyed on guest `id`
+- Link-generation tooling to mint per-guest links from the guest list
+- Responsive/mobile polish (carried from v1.0 Phase 5 — EXP-01/02)
+- Vercel deploy with durable links (DEPLOY-01), sequenced last
+
+**Scope note:** RSVP foundation only — the actual RSVP form/flow is a follow-up milestone, but the identity scheme must support it. This milestone supersedes v1.0 Phase 5 (its polish + deploy fold in here); v1.0 is not deployed separately.
+
 ## Requirements
 
 ### Validated
@@ -24,18 +38,22 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 - ✓ Guest personalization (`?to=` greeting via `useGuestName`, fallback, personalized tab title) + live countdown to May 30 2027 with per-tick digit animation — Phase 3 (PERS-01..04, CNT-01/02)
 - ✓ Full motion layer: olive-branch `BotanicalSvg` + corner brackets drawing in via `pathLength`, Ken Burns hero zoom (CSS keyframes), and the 10-step orchestrated entrance sequence (variants + staggerChildren), with `prefers-reduced-motion` honored — Phase 4 (DECO-01/02/03, HERO-02, ANIM-01..04)
 
-### Active
+### Active (v2.0)
 
-- [ ] Responsive and performant on mobile and desktop
-- [ ] Deployable as a static site to Vercel
+- [ ] Durable per-guest link identity (opaque stable `id`) replacing open `?to=`
+- [ ] Greeting resolves from the link without a public guest list
+- [ ] Backend + datastore foundation keyed on guest `id` (future RSVP builds on it)
+- [ ] Link-generation tooling to mint per-guest links
+- [ ] Responsive and performant on mobile and desktop (carried from v1.0)
+- [ ] Deployed live to Vercel with durable links
 
 ### Out of Scope
 
-- RSVP / guest response capture — this is announcement-only; comes as a later milestone
+- RSVP form/flow itself (accept/decline, guest count, meal/notes) — follow-up milestone; v2.0 only lays the identity + backend foundation it will reuse
 - Event details pages (schedule, travel, registry, gallery) — future milestones
-- Any backend, database, or auth — personalization is URL-param only, no guest list stored
 - Component / UI libraries (shadcn, MUI, etc.) — custom design only per spec
-- Routing beyond the single page — Phase 1 is one screen
+- ~~Any backend, database, or auth~~ — **superseded in v2.0:** a backend + datastore is now in scope to support durable guest identity and future RSVP
+- ~~Static-only / URL-param-only personalization, no guest list stored~~ — **superseded in v2.0:** durable identity requires a stored guest/identity record
 
 ## Context
 
@@ -93,4 +111,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-05-31 after Phase 4 (Visuals & Animation) — full motion experience complete; parallax (HERO-03) dropped from v1_
+_Last updated: 2026-05-31 — started milestone v2.0 (Personalized Guest-Link Identity + RSVP Foundation); v1.0 Phase 5 polish + deploy absorbed into v2.0_
