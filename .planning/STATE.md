@@ -1,13 +1,13 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.0
-milestone_name: Personalized Guest-Link Identity + RSVP Foundation
-status: roadmap_ready
-stopped_at: "v2.0 roadmap created — Phase 6 ready to plan"
-last_updated: "2026-05-30T00:00:00.000Z"
-last_activity: 2026-05-30
+milestone: v1.0
+milestone_name: — Complete
+status: planning
+stopped_at: Phase 6 context gathered
+last_updated: "2026-05-31T06:07:06.037Z"
+last_activity: 2026-05-30 — v2.0 roadmap written (Phases 6–9)
 progress:
-  total_phases: 9
+  total_phases: 10
   completed_phases: 4
   total_plans: 7
   completed_plans: 7
@@ -103,6 +103,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-30T00:00:00.000Z
-Stopped at: v2.0 roadmap created — Phases 6–9 ready; next: /gsd:plan-phase 6
-Resume file: None
+Last session: 2026-05-31T06:07:06.030Z
+Stopped at: Phase 6 context gathered
+Resume file: .planning/phases/06-identity-token-contract/06-CONTEXT.md
