@@ -1,13 +1,13 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.0
-milestone_name: Personalized Guest-Link Identity + RSVP Foundation
-status: planning
-stopped_at: "Phase 6 complete & verified; planning Phase 7"
-last_updated: "2026-05-31T18:36:09.205Z"
+milestone_name: — Active
+status: verifying
+stopped_at: Phase 7 context gathered
+last_updated: "2026-05-31T18:57:16.467Z"
 last_activity: 2026-05-31
 progress:
-  total_phases: 6
+  total_phases: 10
   completed_phases: 5
   total_plans: 8
   completed_plans: 8
@@ -107,6 +107,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-31T18:31:38.575Z
-Stopped at: Completed 06-01-PLAN.md (Phase 6: Identity Token Contract)
-Resume file: None
+Last session: 2026-05-31T18:57:16.464Z
+Stopped at: Phase 7 context gathered
+Resume file: .planning/phases/07-datastore-schema-link-generation-tooling/07-CONTEXT.md
