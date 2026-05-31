@@ -14,7 +14,7 @@
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-### v1.0 — Complete
+**v1.0 (Phases 1–4) — Complete**
 
 - [x] **Phase 1: Foundation** - Design system, fonts, and router wired up (completed 2026-05-29)
 - [x] **Phase 2: Static Page** - Hero photo and all wedding content visible on screen (completed)

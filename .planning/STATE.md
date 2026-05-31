@@ -1,9 +1,9 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: — Complete
-status: verifying
-stopped_at: "Completed 06-01-PLAN.md (Phase 6: Identity Token Contract)"
+milestone: v2.0
+milestone_name: Personalized Guest-Link Identity + RSVP Foundation
+status: planning
+stopped_at: "Phase 6 complete & verified; planning Phase 7"
 last_updated: "2026-05-31T18:36:09.205Z"
 last_activity: 2026-05-31
 progress:
