@@ -68,7 +68,11 @@ function SaveTheDatePage() {
 
         {/* Top header group — top to bottom: Save the Date → divider → couple names */}
         <motion.div className={styles.topGroup} variants={contentContainerVariants}>
-          <motion.p className={styles.label} variants={fadeUpVariants}>Save the Date</motion.p>
+          <motion.p className={styles.label} variants={fadeUpVariants}>
+            <span className={styles.wordEngravers}>Save</span>{' '}
+            <span className={styles.wordScript}>the</span>{' '}
+            <span className={styles.wordEngravers}>Date</span>
+          </motion.p>
           <motion.div
             className={styles.divider}
             variants={dividerVariants}

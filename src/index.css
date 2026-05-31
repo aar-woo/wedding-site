@@ -8,6 +8,12 @@
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Jost", system-ui, sans-serif;
+
+  /* Free Google Fonts standing in for commercial faces:
+     Cinzel ≈ Engravers MT, Pinyon Script ≈ Compendium, Cormorant SC ≈ Mrs Eaves All Petite Caps */
+  --font-engravers: "Cinzel", Georgia, serif;
+  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
+  --font-petite-caps: "Cormorant SC", Georgia, serif;
 }
 
 *,
