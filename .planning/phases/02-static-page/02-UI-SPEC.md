@@ -18,14 +18,14 @@ created: 2026-05-28
 
 ## Design System
 
-| Property | Value |
-|----------|-------|
-| Tool | none |
-| Preset | not applicable |
-| Component library | none — custom CSS Modules only |
-| Icon library | none |
-| Font (display) | Cormorant Garamond — weights 300, 400, 500, 600, 700; italic variants available |
-| Font (body) | Jost — weights 300, 400, 500, 600 |
+| Property          | Value                                                                           |
+| ----------------- | ------------------------------------------------------------------------------- |
+| Tool              | none                                                                            |
+| Preset            | not applicable                                                                  |
+| Component library | none — custom CSS Modules only                                                  |
+| Icon library      | none                                                                            |
+| Font (display)    | Cormorant Garamond — weights 300, 400, 500, 600, 700; italic variants available |
+| Font (body)       | Jost — weights 300, 400, 500, 600                                               |
 
 Source: CLAUDE.md (binding), index.html (Google Fonts preconnect + stylesheet already loaded)
 
@@ -35,17 +35,18 @@ Source: CLAUDE.md (binding), index.html (Google Fonts preconnect + stylesheet al
 
 Declared values (multiples of 4):
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| xs | 4px | Icon gaps, tight letter-spacing nudges |
-| sm | 8px | Gap between "Save the Date" label and couple names; between location and footer |
-| md | 16px | Gap between date line and location line; vertical padding on overlay card |
-| lg | 24px | Gap between couple names and divider; gap between divider and date block |
-| xl | 32px | Content block horizontal padding (mobile); bottom padding above footer |
-| 2xl | 48px | Top clearance from viewport top to content block (desktop) |
-| 3xl | 64px | Top clearance from viewport top to content block (mobile landscape / safe-area) |
+| Token | Value | Usage                                                                           |
+| ----- | ----- | ------------------------------------------------------------------------------- |
+| xs    | 4px   | Icon gaps, tight letter-spacing nudges                                          |
+| sm    | 8px   | Gap between "Save the Date" label and couple names; between location and footer |
+| md    | 16px  | Gap between date line and location line; vertical padding on overlay card       |
+| lg    | 24px  | Gap between couple names and divider; gap between divider and date block        |
+| xl    | 32px  | Content block horizontal padding (mobile); bottom padding above footer          |
+| 2xl   | 48px  | Top clearance from viewport top to content block (desktop)                      |
+| 3xl   | 64px  | Top clearance from viewport top to content block (mobile landscape / safe-area) |
 
 Exceptions:
+
 - Divider line height: 1px (not on the 4pt grid — it is a visual hairline, not a spacing unit)
 - Touch target minimum: 44px height on any interactive element (none in Phase 2, applies Phase 5)
 
@@ -57,13 +58,13 @@ All type is set in CSS Modules variables referencing `--font-display` and `--fon
 
 Active weight set: {300, 400}
 
-| Role | Element | Font | Size | Weight | Line Height | Color | Letter Spacing | Notes |
-|------|---------|------|------|--------|-------------|-------|----------------|-------|
-| Display / Couple Names | `<h1>` | Cormorant Garamond | 72px desktop / 48px mobile | 300 (light) | 1.1 | `var(--gold-light)` = #D4B57A | 0.02em | Dominant focal point; italic optional but default roman |
-| Section Label | `<p>` | Jost | 11px | 400 | 1.0 | `var(--gold)` = #BF9B5A | 0.25em uppercase | "SAVE THE DATE" — all-caps tracked label; `text-transform: uppercase` + `letter-spacing: 0.25em` provide visual distinction without needing elevated weight |
-| Date | `<p>` | Cormorant Garamond | 28px desktop / 22px mobile | 400 | 1.3 | `var(--cream)` = #EAE0CB | 0.04em | "May 30, 2027" |
-| Location | `<p>` | Jost | 14px | 400 | 1.5 | `var(--cream)` = #EAE0CB | 0.12em | "Oahu, Hawaii" |
-| Footer note | `<p>` | Jost | 11px | 300 | 1.5 | `var(--muted)` = #72685A | 0.15em | "Formal invitation to follow" — subdued, bottom of viewport |
+| Role                   | Element | Font               | Size                       | Weight      | Line Height | Color                         | Letter Spacing   | Notes                                                                                                                                                       |
+| ---------------------- | ------- | ------------------ | -------------------------- | ----------- | ----------- | ----------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Display / Couple Names | `<h1>`  | Cormorant Garamond | 72px desktop / 48px mobile | 300 (light) | 1.1         | `var(--gold-light)` = #D4B57A | 0.02em           | Dominant focal point; italic optional but default roman                                                                                                     |
+| Section Label          | `<p>`   | Jost               | 11px                       | 400         | 1.0         | `var(--gold)` = #BF9B5A       | 0.25em uppercase | "SAVE THE DATE" — all-caps tracked label; `text-transform: uppercase` + `letter-spacing: 0.25em` provide visual distinction without needing elevated weight |
+| Date                   | `<p>`   | Cormorant Garamond | 28px desktop / 22px mobile | 400         | 1.3         | `var(--cream)` = #EAE0CB      | 0.04em           | "May 30, 2027"                                                                                                                                              |
+| Location               | `<p>`   | Jost               | 14px                       | 400         | 1.5         | `var(--cream)` = #EAE0CB      | 0.12em           | "Oahu, Hawaii"                                                                                                                                              |
+| Footer note            | `<p>`   | Jost               | 11px                       | 300         | 1.5         | `var(--muted)` = #72685A      | 0.15em           | "Formal invitation to follow" — subdued, bottom of viewport                                                                                                 |
 
 Source: CLAUDE.md (font roles and color assignments); sizes are opinionated defaults derived from the forest/gold elegant aesthetic — not re-asked.
 
@@ -79,15 +80,15 @@ Source: CLAUDE.md (font roles and color assignments); sizes are opinionated defa
 
 Source: CLAUDE.md (binding), src/index.css (tokens already defined as CSS custom properties).
 
-| Role | Token | Hex | Usage in this phase |
-|------|-------|-----|---------------------|
-| Dominant (60%) | `--forest` | #0B1610 | Full-bleed background behind hero; visible where hero does not cover (letterbox safety) |
-| Secondary (30%) | `--forest` (same) | #0B1610 | No distinct secondary surface in Phase 2 — single-layer full-bleed composition |
-| Accent — display (15%) | `--gold-light` | #D4B57A | Couple names "Aaron & Rina" only |
-| Accent — labels/borders (10%) | `--gold` | #BF9B5A | "SAVE THE DATE" label; divider line |
-| Body text (20%) | `--cream` | #EAE0CB | Date, location |
-| Subdued / footer | `--muted` | #72685A | "Formal invitation to follow" footer note |
-| Hero scrim | n/a — CSS gradient | linear-gradient(to top, rgba(11,22,16,0.82) 0%, rgba(11,22,16,0.45) 40%, rgba(11,22,16,0.20) 70%, transparent 100%) | Overlay on hero image to ensure text legibility |
+| Role                          | Token              | Hex                                                                                                                 | Usage in this phase                                                                     |
+| ----------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Dominant (60%)                | `--forest`         | #0B1610                                                                                                             | Full-bleed background behind hero; visible where hero does not cover (letterbox safety) |
+| Secondary (30%)               | `--forest` (same)  | #0B1610                                                                                                             | No distinct secondary surface in Phase 2 — single-layer full-bleed composition          |
+| Accent — display (15%)        | `--gold-light`     | #D4B57A                                                                                                             | Couple names "Aaron & Rina" only                                                        |
+| Accent — labels/borders (10%) | `--gold`           | #BF9B5A                                                                                                             | "SAVE THE DATE" label; divider line                                                     |
+| Body text (20%)               | `--cream`          | #EAE0CB                                                                                                             | Date, location                                                                          |
+| Subdued / footer              | `--muted`          | #72685A                                                                                                             | "Formal invitation to follow" footer note                                               |
+| Hero scrim                    | n/a — CSS gradient | linear-gradient(to top, rgba(11,22,16,0.82) 0%, rgba(11,22,16,0.45) 40%, rgba(11,22,16,0.20) 70%, transparent 100%) | Overlay on hero image to ensure text legibility                                         |
 
 ### Color assumptions documented
 
@@ -95,6 +96,7 @@ Source: CLAUDE.md (binding), src/index.css (tokens already defined as CSS custom
 - **No distinct secondary surface:** Phase 2 is a single full-bleed composition. There is no card, sidebar, or nav surface — the 60/30/10 split collapses to dominant + accents.
 
 Accent reserved for:
+
 - `--gold-light` (#D4B57A): Couple names exclusively
 - `--gold` (#BF9B5A): "SAVE THE DATE" label text and the horizontal divider line exclusively
 
@@ -141,14 +143,14 @@ The page is a single full-viewport composition:
 
 ### Vertical spacing rhythm (content block, top to bottom)
 
-| Gap | Tokens | Value |
-|-----|--------|-------|
-| Label bottom margin | sm | 8px |
-| Couple names bottom margin | lg | 24px |
+| Gap                                   | Tokens  | Value                                                  |
+| ------------------------------------- | ------- | ------------------------------------------------------ |
+| Label bottom margin                   | sm      | 8px                                                    |
+| Couple names bottom margin            | lg      | 24px                                                   |
 | Divider total height (line + margins) | lg + lg | 48px (24px margin-top auto + 1px + 24px margin-bottom) |
-| Date bottom margin | md | 16px |
-| Location bottom margin | xl | 32px |
-| Footer (bottom of content block) | — | flush |
+| Date bottom margin                    | md      | 16px                                                   |
+| Location bottom margin                | xl      | 32px                                                   |
+| Footer (bottom of content block)      | —       | flush                                                  |
 
 ---
 
@@ -165,7 +167,7 @@ The scrim layer sits between the hero `<img>` and the content block. It must be 
     to top,
     rgba(11, 22, 16, 0.82) 0%,
     rgba(11, 22, 16, 0.45) 40%,
-    rgba(11, 22, 16, 0.20) 70%,
+    rgba(11, 22, 16, 0.2) 70%,
     transparent 100%
   );
   pointer-events: none;
@@ -180,17 +182,17 @@ Rationale: The content block sits in the bottom 30% of the viewport. The 82% for
 
 Phase 2 contains no interactive elements, CTAs, empty states, or error states (content is hardcoded — dynamic guest name and countdown are Phase 3). All copy is settled from PROJECT.md / REQUIREMENTS.md.
 
-| Element | Copy | Color | Font Role |
-|---------|------|-------|-----------|
-| Section label | SAVE THE DATE | `--gold` | Jost uppercase label |
-| Couple names | Aaron & Rina | `--gold-light` | Cormorant Garamond display |
-| Date | May 30, 2027 | `--cream` | Cormorant Garamond date |
-| Location | Oahu, Hawaii | `--cream` | Jost body |
-| Footer note | Formal invitation to follow | `--muted` | Jost body |
-| Primary CTA | none — Phase 2 has no interactive actions | — | — |
-| Empty state | not applicable — all content is static | — | — |
-| Error state | not applicable — no data fetching in Phase 2 | — | — |
-| Destructive confirmation | not applicable — no destructive actions | — | — |
+| Element                  | Copy                                         | Color          | Font Role                  |
+| ------------------------ | -------------------------------------------- | -------------- | -------------------------- |
+| Section label            | SAVE THE DATE                                | `--gold`       | Jost uppercase label       |
+| Couple names             | Rina & Aaron                                 | `--gold-light` | Cormorant Garamond display |
+| Date                     | May 30, 2027                                 | `--cream`      | Cormorant Garamond date    |
+| Location                 | Oahu, Hawaii                                 | `--cream`      | Jost body                  |
+| Footer note              | Formal invitation to follow                  | `--muted`      | Jost body                  |
+| Primary CTA              | none — Phase 2 has no interactive actions    | —              | —                          |
+| Empty state              | not applicable — all content is static       | —              | —                          |
+| Error state              | not applicable — no data fetching in Phase 2 | —              | —                          |
+| Destructive confirmation | not applicable — no destructive actions      | —              | —                          |
 
 Source: PROJECT.md ("Content is settled"), REQUIREMENTS.md (CONT-01..05)
 
@@ -200,12 +202,13 @@ Source: PROJECT.md ("Content is settled"), REQUIREMENTS.md (CONT-01..05)
 
 Components to build in Phase 2:
 
-| Component | File | Responsibility |
-|-----------|------|---------------|
+| Component         | File                                            | Responsibility                                         |
+| ----------------- | ----------------------------------------------- | ------------------------------------------------------ |
 | `SaveTheDatePage` | `src/pages/SaveTheDatePage.jsx` + `.module.css` | Root page layout: hero container, scrim, content block |
-| — | `src/pages/SaveTheDatePage.module.css` | All layout and typography styles for the page |
+| —                 | `src/pages/SaveTheDatePage.module.css`          | All layout and typography styles for the page          |
 
 Components explicitly NOT built in Phase 2 (deferred):
+
 - `ParallaxImage.jsx` — Phase 4 (Hero-03)
 - `BotanicalSvg.jsx` — Phase 4 (DECO-02)
 - `GuestGreeting.jsx` — Phase 3 (PERS-01)
@@ -216,10 +219,10 @@ Components explicitly NOT built in Phase 2 (deferred):
 
 ## Registry Safety
 
-| Registry | Blocks Used | Safety Gate |
-|----------|-------------|-------------|
+| Registry        | Blocks Used      | Safety Gate    |
+| --------------- | ---------------- | -------------- |
 | shadcn official | none — no shadcn | not applicable |
-| third-party | none | not applicable |
+| third-party     | none             | not applicable |
 
 No component library is used. CLAUDE.md constraint: "Do not use any component libraries (shadcn, MUI, etc.)." Custom CSS Modules only.
 
@@ -229,16 +232,16 @@ No component library is used. CLAUDE.md constraint: "Do not use any component li
 
 All assumptions were made because the scope excludes interactivity and CLAUDE.md fully defines the design system. No user questions were needed.
 
-| Assumption | Rationale | Override if |
-|-----------|-----------|-------------|
-| Couple names font-weight: 300 | Lightest loaded weight; maximally elegant at 72px display | Renders too thin on 1x screens → try weight 400 |
-| Section label font-weight: 400 | `text-transform: uppercase` + `letter-spacing: 0.25em` provide sufficient visual distinction; no need for weight 500, keeping active weight set to {300, 400} | — |
-| Scrim: 82% opacity at base | Ensures WCAG AA for cream text over real photography | Hero image is very dark → reduce to 65% |
-| Content block anchored bottom | Mimics print-invitation lower-third composition | Designer prefers centered → change to `align-items: center; justify-content: center` on `.app` |
-| Divider width: 48px | Proportional to content width; evokes invitation rule line | Too narrow → extend to 64px |
-| Date font: Cormorant Garamond | Date is the most important fact after names — display serif for prominence | — |
-| Location font: Jost | Supporting context — body sans reads at smaller size | — |
-| No `<hr>` for divider | Avoids UA stylesheet normalization in CSS Modules | — |
+| Assumption                     | Rationale                                                                                                                                                     | Override if                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Couple names font-weight: 300  | Lightest loaded weight; maximally elegant at 72px display                                                                                                     | Renders too thin on 1x screens → try weight 400                                                |
+| Section label font-weight: 400 | `text-transform: uppercase` + `letter-spacing: 0.25em` provide sufficient visual distinction; no need for weight 500, keeping active weight set to {300, 400} | —                                                                                              |
+| Scrim: 82% opacity at base     | Ensures WCAG AA for cream text over real photography                                                                                                          | Hero image is very dark → reduce to 65%                                                        |
+| Content block anchored bottom  | Mimics print-invitation lower-third composition                                                                                                               | Designer prefers centered → change to `align-items: center; justify-content: center` on `.app` |
+| Divider width: 48px            | Proportional to content width; evokes invitation rule line                                                                                                    | Too narrow → extend to 64px                                                                    |
+| Date font: Cormorant Garamond  | Date is the most important fact after names — display serif for prominence                                                                                    | —                                                                                              |
+| Location font: Jost            | Supporting context — body sans reads at smaller size                                                                                                          | —                                                                                              |
+| No `<hr>` for divider          | Avoids UA stylesheet normalization in CSS Modules                                                                                                             | —                                                                                              |
 
 ---
 

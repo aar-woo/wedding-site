@@ -3,7 +3,6 @@
 ## Project
 
 React + Vite + Framer Motion wedding website.
-Phase 1: Animated save-the-date with guest personalization via URL params.
 
 ## Tech stack
 
@@ -91,11 +90,12 @@ Wrap <App> in <BrowserRouter> in main.jsx.
 - Do not hardcode animation delays — derive from staggerChildren index
 
 <!-- GSD:project-start source:PROJECT.md -->
+
 ## Project
 
-**Wedding Save-the-Date — Aaron & Rina**
+**Wedding Save-the-Date — Rina & Aaron**
 
-An animated, single-page "save the date" website for Aaron & Rina's wedding on
+An animated, single-page "save the date" website for Rina & Aaron's wedding on
 May 30, 2027 in Oahu, Hawaii. Guests open a personalized link (e.g.
 `/?to=The+Johnson+Family`) and see their name woven into an elegant, motion-rich
 forest-and-gold scene with the couple's names, the date, the location, and a
@@ -104,7 +104,7 @@ events portal.
 
 **Core Value:** When a guest opens their link, they feel the warmth and elegance of the
 invitation immediately — a beautiful, personalized, smoothly-animated reveal of
-"Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
+"Rina & Aaron· May 30, 2027 · Oahu, Hawaii."
 
 ### Constraints
 
@@ -117,39 +117,50 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 <!-- GSD:project-end -->
 
 <!-- GSD:stack-start source:STACK.md -->
+
 ## Technology Stack
 
 Technology stack not yet documented. Will populate after codebase mapping or first phase.
+
 <!-- GSD:stack-end -->
 
 <!-- GSD:conventions-start source:CONVENTIONS.md -->
+
 ## Conventions
 
 Conventions not yet established. Will populate as patterns emerge during development.
+
 <!-- GSD:conventions-end -->
 
 <!-- GSD:architecture-start source:ARCHITECTURE.md -->
+
 ## Architecture
 
 Architecture not yet mapped. Follow existing patterns found in the codebase.
+
 <!-- GSD:architecture-end -->
 
 <!-- GSD:workflow-start source:GSD defaults -->
+
 ## GSD Workflow Enforcement
 
 Before using Edit, Write, or other file-changing tools, start work through a GSD command so planning artifacts and execution context stay in sync.
 
 Use these entry points:
+
 - `/gsd:quick` for small fixes, doc updates, and ad-hoc tasks
 - `/gsd:debug` for investigation and bug fixing
 - `/gsd:execute-phase` for planned phase work
 
 Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
+
 <!-- GSD:workflow-end -->
 
 <!-- GSD:profile-start -->
+
 ## Developer Profile
 
 > Profile not yet configured. Run `/gsd:profile-user` to generate your developer profile.
 > This section is managed by `generate-claude-profile` -- do not edit manually.
+
 <!-- GSD:profile-end -->
