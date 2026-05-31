@@ -58,7 +58,7 @@
 
 .label {
   font-family: var(--font-engravers);
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 500;
   line-height: 1;
   color: #ffffff;
@@ -96,7 +96,7 @@
 
 .coupleNames {
   font-family: var(--font-petite-caps);
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
@@ -157,6 +157,15 @@
   .heroImage {
     animation: kenBurns 20s ease-in-out infinite alternate;
   }
+}
+
+/* Decorations group — full-frame, non-painting wrapper that orchestrates the
+   corner brackets + botanicals as one timed act. No z-index/opacity here so it
+   doesn't form a stacking context (children keep their own z-index/positioning). */
+.decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 /* Botanical pair — absolute container flanking the couple-name h1.
