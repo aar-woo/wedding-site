@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: — Complete
-status: planning
-stopped_at: Phase 6 context gathered
-last_updated: "2026-05-31T06:07:06.037Z"
-last_activity: 2026-05-30 — v2.0 roadmap written (Phases 6–9)
+status: verifying
+stopped_at: "Completed 06-01-PLAN.md (Phase 6: Identity Token Contract)"
+last_updated: "2026-05-31T18:31:38.578Z"
+last_activity: 2026-05-31
 progress:
-  total_phases: 10
-  completed_phases: 4
-  total_plans: 7
-  completed_plans: 7
+  total_phases: 6
+  completed_phases: 5
+  total_plans: 8
+  completed_plans: 8
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-31)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
-**Current focus:** Milestone v2.0 — Personalized Guest-Link Identity + RSVP Foundation
+**Current focus:** Phase 06 — identity-token-contract
 
 ## Current Position
 
-Phase: Phase 6 — Identity Token Contract (not started)
-Plan: —
-Status: Roadmap created; ready to plan Phase 6
-Last activity: 2026-05-30 — v2.0 roadmap written (Phases 6–9)
+Phase: 06 (identity-token-contract) — EXECUTING
+Plan: 1 of 1
+Status: Phase complete — ready for verification
+Last activity: 2026-05-31
 
 Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 complete)
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 02-static-page P01 | 25min | 3 tasks | 3 files |
 | Phase 03-personalization-countdown P01 | 2min | 3 tasks | 4 files |
 | Phase 03-personalization-countdown P02 | 2min | 2 tasks | 3 files |
+| Phase 06 P01 | 4min | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,9 @@ Recent decisions affecting current work:
 - [v2.0 milestone]: URL shape: /i/<nanoid>?t=<base64url-payload>.<base64url-hmac> — locked before any code; changing it forces re-issue of all guest links
 - [v2.0 milestone]: vercel.json: /api passthrough rule first, then /(.*) SPA catch-all — order is critical (catch-all-first intercepts all /api/ requests)
 - [v2.0 milestone]: Phase 5 (Polish & Deploy) superseded — EXP-01, EXP-02, DEPLOY-01 absorbed into v2.0 Phases 8–9
+- [Phase 06]: HMAC-SHA256 via node:crypto (not jose/JWT) — zero-dep, sufficient for signing display names
+- [Phase 06]: Trust boundary: scripts/lib/ (Node+secret-bearing) vs src/lib/ (browser-safe, no secret)
+- [Phase 06]: GUEST_TOKEN_SECRET + DATABASE_URL never VITE_-prefixed; contract locked before Phase 7 link minting
 
 ### Pending Todos
 
@@ -103,6 +107,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-31T06:07:06.030Z
-Stopped at: Phase 6 context gathered
-Resume file: .planning/phases/06-identity-token-contract/06-CONTEXT.md
+Last session: 2026-05-31T18:31:38.575Z
+Stopped at: Completed 06-01-PLAN.md (Phase 6: Identity Token Contract)
+Resume file: None

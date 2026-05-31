@@ -24,7 +24,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### v2.0 — Active
 
-- [ ] **Phase 6: Identity Token Contract** - URL shape, signed token format, env var naming, and token sign/verify library locked before any code is committed
+- [x] **Phase 6: Identity Token Contract** - URL shape, signed token format, env var naming, and token sign/verify library locked before any code is committed (completed 2026-05-31)
 - [ ] **Phase 7: Datastore Schema & Link-Generation Tooling** - Neon Postgres provisioned, guest schema migrated, local script mints real shareable links
 - [ ] **Phase 8: Frontend Hook & API Endpoint** - Guest-name hook updated to parse signed token; Vercel serverless GET endpoint wired; vercel.json deployed
 - [ ] **Phase 9: Mobile Polish & Deploy** - Responsive layout verified on mobile, site deployed live to Vercel with durable personalized links
@@ -106,7 +106,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Running `grep -r "VITE_" .env* src/` produces no secret-named matches — env var naming convention (`GUEST_TOKEN_SECRET`, `DATABASE_URL`, no `VITE_` prefix) is established in writing before the first `api/` file is created
   4. Navigating to a manually-crafted URL with a valid token shows the correct guest name; navigating with a missing or malformed token falls back to "Our Beloved Guests" with no error screen
 **Plans**: 1 plan
-- [ ] 06-01-PLAN.md — Locked contract doc + scripts/lib/token.js sign/verify + src/lib browser decode util + node:test suites (LINK-01..03)
+- [x] 06-01-PLAN.md — Locked contract doc + scripts/lib/token.js sign/verify + src/lib browser decode util + node:test suites (LINK-01..03)
 
 ### Phase 7: Datastore Schema & Link-Generation Tooling
 **Goal**: Guests can receive a real shareable link — the Neon Postgres guest table exists, and the local script can mint a batch of valid, durable, personalized URLs from a CSV
@@ -155,7 +155,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 3. Personalization & Countdown | 2/2 | Complete | — |
 | 4. Visuals & Animation | 3/3 | Complete | — |
 | ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
-| 6. Identity Token Contract | 0/1 | Not started | — |
+| 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 0/TBD | Not started | — |
 | 8. Frontend Hook & API Endpoint | 0/TBD | Not started | — |
 | 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
@@ -166,7 +166,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 
 **Goal:** Periodically re-trigger the olive-branch `BotanicalSvg` draw-in animation on a 7-second interval (loop the `pathLength` draw so the branches redraw every 7s) rather than animating only once on page load. Must stay within the `prefers-reduced-motion` guard (no looping redraw when reduced motion is requested).
 **Requirements:** TBD
-**Plans:** 0 plans
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] TBD (promote with /gsd:review-backlog when ready)
