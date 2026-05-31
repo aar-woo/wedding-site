@@ -4,7 +4,7 @@ milestone: v2.0
 milestone_name: — Active
 status: verifying
 stopped_at: Completed 07-03-PLAN.md (generate-links + check-link live run)
-last_updated: "2026-05-31T23:50:18.293Z"
+last_updated: "2026-05-31T23:55:13.999Z"
 last_activity: 2026-05-31
 progress:
   total_phases: 10
