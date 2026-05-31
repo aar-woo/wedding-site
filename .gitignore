@@ -25,3 +25,7 @@ dist-ssr
 
 # Original full-size PNGs (optimized to WebP in public/images)
 image-originals/
+
+# Private guest data — NEVER commit (real names + emails + personalized links)
+guests.csv
+links.csv
