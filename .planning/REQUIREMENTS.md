@@ -32,7 +32,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **HERO-01**: A full-bleed hero photo (`/images/save-the-date-hero.png`) fills the viewport via `object-fit: cover`
 - [ ] **HERO-02**: The hero performs a subtle Ken Burns zoom (scale 1 → 1.08 over 20s, alternating)
-- [ ] **HERO-03**: The hero layer has a parallax scroll offset driven by Framer Motion `useScroll` + `useTransform` (`ParallaxImage` component)
+- ~~**HERO-03**: The hero layer has a parallax scroll offset~~ — **Out of scope (v1)**, see below. The save-the-date is a single, non-scrolling screen, so there is no scroll distance for parallax; Ken Burns (HERO-02) is the hero's only motion. (Dropped Phase 4, 2026-05-30.)
 
 ### Botanical & Decoration
 
@@ -85,6 +85,7 @@ Explicitly excluded. Documented to prevent scope creep.
 | Routing beyond one page                    | Phase 1 is a single screen per spec                                      |
 | UI component libraries (shadcn, MUI, etc.) | Custom design only per spec                                              |
 | Stored/managed guest list                  | Names come from the link, not a system of record                         |
+| Parallax hero scroll offset (HERO-03)      | Single-screen keepsake doesn't scroll; no distance for parallax to read against. Ken Burns is the hero's only motion. Dropped Phase 4 (2026-05-30). |
 
 ## Traceability
 
@@ -111,7 +112,7 @@ Which phases cover which requirements. Populated during roadmap creation.
 | DECO-02     | Phase 4 | Pending  |
 | DECO-03     | Phase 4 | Pending  |
 | HERO-02     | Phase 4 | Pending  |
-| HERO-03     | Phase 4 | Pending  |
+| HERO-03     | —       | Out of Scope (v1) |
 | ANIM-01     | Phase 4 | Pending  |
 | ANIM-02     | Phase 4 | Pending  |
 | ANIM-03     | Phase 4 | Pending  |

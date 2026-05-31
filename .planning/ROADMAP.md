@@ -65,14 +65,15 @@ Decimal phases appear between their surrounding integers in numeric order.
 **UI hint**: yes
 
 ### Phase 4: Visuals & Animation
-**Goal**: The page delivers its full motion experience — botanical line art, corner brackets, Ken Burns hero, parallax scroll, and the 10-step orchestrated entrance sequence
+**Goal**: The page delivers its full motion experience — botanical line art, corner brackets, Ken Burns hero, and the 10-step orchestrated entrance sequence
 **Depends on**: Phase 3
-**Requirements**: DECO-01, DECO-02, DECO-03, HERO-02, HERO-03, ANIM-01, ANIM-02, ANIM-03, ANIM-04
+**Requirements**: DECO-01, DECO-02, DECO-03, HERO-02, ANIM-01, ANIM-02, ANIM-03, ANIM-04
+**Scope note** (2026-05-30): Parallax (HERO-03) dropped from v1 — the single-screen keepsake doesn't scroll, so Ken Burns is the hero's only motion and `ParallaxImage` is not built. See `.planning/phases/04-visuals-animation/04-CONTEXT.md` D-09.
 **Success Criteria** (what must be TRUE):
   1. On page load, elements reveal in the specified order (background → brackets → botanical → guest greeting → label → names → divider → date → location → footer) with no elements jumping in out of order
   2. Corner bracket SVGs visibly draw themselves in via `pathLength` animation on arrival
   3. The botanical branch SVG draws its strokes progressively, with branches staggering rather than appearing all at once; strokes are gold with no fills except terminal dots
-  4. The hero photo performs a Ken Burns zoom (scale 1 → 1.08) on a 20-second loop, and scrolling the page produces a parallax offset on the hero layer
+  4. The hero photo performs a Ken Burns zoom (scale 1 → 1.08) on a 20-second loop (parallax dropped — see scope note)
   5. Each countdown digit that changes animates individually (old number exits, new number enters via AnimatePresence)
 **Plans**: TBD
 **UI hint**: yes
