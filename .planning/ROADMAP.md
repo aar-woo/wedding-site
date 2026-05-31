@@ -105,7 +105,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `scripts/lib/token.js` can produce a signed token from a guest record and verify it — `verify(sign(payload)) === true`, and a tampered payload returns false
   3. Running `grep -r "VITE_" .env* src/` produces no secret-named matches — env var naming convention (`GUEST_TOKEN_SECRET`, `DATABASE_URL`, no `VITE_` prefix) is established in writing before the first `api/` file is created
   4. Navigating to a manually-crafted URL with a valid token shows the correct guest name; navigating with a missing or malformed token falls back to "Our Beloved Guests" with no error screen
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 06-01-PLAN.md — Locked contract doc + scripts/lib/token.js sign/verify + src/lib browser decode util + node:test suites (LINK-01..03)
 
 ### Phase 7: Datastore Schema & Link-Generation Tooling
 **Goal**: Guests can receive a real shareable link — the Neon Postgres guest table exists, and the local script can mint a batch of valid, durable, personalized URLs from a CSV
@@ -154,7 +155,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 3. Personalization & Countdown | 2/2 | Complete | — |
 | 4. Visuals & Animation | 3/3 | Complete | — |
 | ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
-| 6. Identity Token Contract | 0/TBD | Not started | — |
+| 6. Identity Token Contract | 0/1 | Not started | — |
 | 7. Datastore Schema & Link-Generation | 0/TBD | Not started | — |
 | 8. Frontend Hook & API Endpoint | 0/TBD | Not started | — |
 | 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
