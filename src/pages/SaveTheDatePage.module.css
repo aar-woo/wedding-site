@@ -29,6 +29,7 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  will-change: transform;
 }
 
 .scrim {
@@ -57,7 +58,7 @@
 
 .label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1;
   color: var(--gold);
@@ -112,6 +113,35 @@
   color: var(--muted);
   letter-spacing: 0.15em;
   margin: 0;
+}
+
+/* Ken Burns hero zoom — scale 1 → 1.08 over 20s, alternating.
+   Guarded so it stills when OS "Reduce Motion" is on (HERO-02). */
+@keyframes kenBurns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .heroImage {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+  }
+}
+
+/* Botanical pair — absolute container flanking the couple-name h1.
+   Flex children are BotanicalSvg (left, normal) and BotanicalSvg (right, flipped).
+   Exact `bottom` offset and padding tuned at visual checkpoint — leave room here. */
+.botanicalPair {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 180px; /* tune at visual checkpoint to align beside the h1 */
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  pointer-events: none;
 }
 
 /* Larger screens: hero renders as a large greeting-card-shaped frame floating
