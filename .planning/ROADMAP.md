@@ -76,8 +76,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The hero photo performs a Ken Burns zoom (scale 1 → 1.08) on a 20-second loop (parallax dropped — see scope note)
   5. Each countdown digit that changes animates individually (old number exits, new number enters via AnimatePresence)
 **Plans**: 3 plans (2 waves)
-- [ ] 04-01-PLAN.md — BotanicalSvg olive-branch component (pathLength stagger, flipped) [DECO-02, DECO-03]
-- [ ] 04-02-PLAN.md — CornerBrackets component (four corners, pathLength draw-in) [DECO-01]
+- [x] 04-01-PLAN.md — BotanicalSvg olive-branch component (pathLength stagger, flipped) [DECO-02, DECO-03]
+- [x] 04-02-PLAN.md — CornerBrackets component (four corners, pathLength draw-in) [DECO-01]
 - [ ] 04-03-PLAN.md — SaveTheDatePage entrance orchestration + Ken Burns + MotionConfig [HERO-02, ANIM-01..04]
 **UI hint**: yes
 
@@ -103,3 +103,14 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 3. Personalization & Countdown | 1/2 | In Progress|  |
 | 4. Visuals & Animation | 0/3 | Not started | - |
 | 5. Polish & Deploy | 0/TBD | Not started | - |
+
+## Backlog
+
+### Phase 999.1: Olive-branch redraw interval (7s) (BACKLOG)
+
+**Goal:** Periodically re-trigger the olive-branch `BotanicalSvg` draw-in animation on a 7-second interval (loop the `pathLength` draw so the branches redraw every 7s) rather than animating only once on page load. Must stay within the `prefers-reduced-motion` guard (no looping redraw when reduced motion is requested).
+**Requirements:** TBD
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (promote with /gsd:review-backlog when ready)
