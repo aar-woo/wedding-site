@@ -1,7 +1,12 @@
-import SaveTheDatePage from './pages/SaveTheDatePage'
+import { MotionConfig } from 'framer-motion';
+import SaveTheDatePage from './pages/SaveTheDatePage';
 
 function App() {
-  return <SaveTheDatePage />
+  return (
+    <MotionConfig reducedMotion="user">
+      <SaveTheDatePage />
+    </MotionConfig>
+  );
 }
 
-export default App
+export default App;
