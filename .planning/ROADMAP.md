@@ -131,7 +131,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `GET /api/guest/:id` returns `{ id, displayName }` with HTTP 200 for a valid known guest, and HTTP 404 for an unknown or invalid id
   3. Running `grep -r "VITE_" .env* src/` returns zero results for `GUEST_TOKEN_SECRET` or `DATABASE_URL` — secrets are present only in Vercel env vars and `.env.local`, never in the Vite client bundle
   4. `vercel.json` correctly routes `/api/*` to serverless functions before the SPA catch-all — navigating directly to `/i/<id>?t=<token>` in a fresh browser tab shows the personalized page, not a 404
-**Plans**: TBD
+**Plans**: 2 plans (1 wave)
+- [ ] 08-01-PLAN.md — useGuestName token-first resolution + App.jsx /i/:id route (BACK-02)
+- [ ] 08-02-PLAN.md — api/guest/[id].js Neon lookup + vercel.json + endpoint harness + VITE_ audit (BACK-02, BACK-03)
 **UI hint**: yes
 
 ### Phase 9: Mobile Polish & Deploy
@@ -160,7 +162,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
-| 8. Frontend Hook & API Endpoint | 0/TBD | Not started | — |
+| 8. Frontend Hook & API Endpoint | 0/2 | Not started | — |
 | 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
 
 ## Backlog
