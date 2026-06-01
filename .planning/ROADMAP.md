@@ -132,7 +132,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Running `grep -r "VITE_" .env* src/` returns zero results for `GUEST_TOKEN_SECRET` or `DATABASE_URL` — secrets are present only in Vercel env vars and `.env.local`, never in the Vite client bundle
   4. `vercel.json` correctly routes `/api/*` to serverless functions before the SPA catch-all — navigating directly to `/i/<id>?t=<token>` in a fresh browser tab shows the personalized page, not a 404
 **Plans**: 2 plans (1 wave)
-- [ ] 08-01-PLAN.md — useGuestName token-first resolution + App.jsx /i/:id route (BACK-02)
+- [x] 08-01-PLAN.md — useGuestName token-first resolution + App.jsx /i/:id route (BACK-02)
 - [ ] 08-02-PLAN.md — api/guest/[id].js Neon lookup + vercel.json + endpoint harness + VITE_ audit (BACK-02, BACK-03)
 **UI hint**: yes
 
@@ -162,7 +162,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | ~~5. Polish & Deploy~~ | — | Superseded by v2.0 | — |
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
-| 8. Frontend Hook & API Endpoint | 0/2 | Not started | — |
+| 8. Frontend Hook & API Endpoint | 1/2 | In Progress|  |
 | 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
 
 ## Backlog
@@ -171,7 +171,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 
 **Goal:** Periodically re-trigger the olive-branch `BotanicalSvg` draw-in animation on a 7-second interval (loop the `pathLength` draw so the branches redraw every 7s) rather than animating only once on page load. Must stay within the `prefers-reduced-motion` guard (no looping redraw when reduced motion is requested).
 **Requirements:** TBD
-**Plans:** 1/3 plans executed
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] TBD (promote with /gsd:review-backlog when ready)

@@ -74,7 +74,7 @@ Personalized Guest-Link Identity + RSVP Foundation. Replaces the open `?to=` per
 ### Backend Foundation
 
 - [x] **BACK-01**: A Neon Postgres datastore holds a guest record keyed on the opaque `id`, with nullable RSVP fields reserved so a future RSVP flow needs no migration
-- [ ] **BACK-02**: A Vercel serverless endpoint (Node runtime) validates/looks up a guest by `id` — the contract a future RSVP flow builds on
+- [x] **BACK-02**: A Vercel serverless endpoint (Node runtime) validates/looks up a guest by `id` — the contract a future RSVP flow builds on
 - [ ] **BACK-03**: The signing secret and database URL are server-only environment variables (never `VITE_`-prefixed; never present in the client bundle)
 
 ## v2+ Requirements (Future)
@@ -145,7 +145,7 @@ Which phases cover which requirements. Populated during roadmap creation.
 | LINK-03     | Phase 6 | Complete |
 | LINK-04     | Phase 7 | Complete |
 | BACK-01     | Phase 7 | Complete |
-| BACK-02     | Phase 8 | Pending |
+| BACK-02     | Phase 8 | Complete |
 | BACK-03     | Phase 8 | Pending |
 
 **Coverage:**

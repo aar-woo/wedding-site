@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Active
-status: verifying
-stopped_at: Phase 8 planned (2 plans, 1 wave)
-last_updated: "2026-06-01T04:35:45.958Z"
-last_activity: 2026-05-31
+status: executing
+stopped_at: Completed 08-01-PLAN.md
+last_updated: "2026-06-01T05:46:05.280Z"
+last_activity: 2026-06-01
 progress:
   total_phases: 10
   completed_phases: 6
   total_plans: 13
-  completed_plans: 11
+  completed_plans: 12
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-31)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
-**Current focus:** Phase 06 — identity-token-contract
+**Current focus:** Phase 08 — frontend-hook-api-endpoint
 
 ## Current Position
 
-Phase: 999.1
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-05-31
+Phase: 08 (frontend-hook-api-endpoint) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
+Last activity: 2026-06-01
 
 Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 complete)
 
@@ -59,6 +59,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 06 P01 | 4min | 3 tasks | 6 files |
 | Phase 07 P01 | 2m 22s | 3 tasks | 5 files |
 | Phase 07 P03 | 4 | 3 tasks | 2 files |
+| Phase 08 P01 | 70s | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,8 @@ Recent decisions affecting current work:
 - [Phase 07]: node --env-file=.env.local over dotenv for zero-dep env loading (Node 20+ built-in, Node v23 installed)
 - [Phase 07]: No SITE_BASE_URL set — links use placeholder host; must regenerate links.csv after Phase 9 deployment
 - [Phase 07]: Soft-delete confirmed live: deleted_at set on removed CSV row, id and row preserved in Neon
+- [Phase 08]: Token-first resolution in useGuestName: ?t= decoded client-side via decodeGuestToken, then ?to= legacy fallback, then 'Our Beloved Guests' — no fetch, no network call
+- [Phase 08]: App.jsx Routes: /i/:id (durable identity) + /* catch-all both render SaveTheDatePage inside MotionConfig; import from 'react-router' (not react-router-dom)
 
 ### Pending Todos
 
@@ -113,6 +116,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-01T04:35:45.948Z
-Stopped at: Phase 8 planned (2 plans, 1 wave)
-Resume file: .planning/phases/08-frontend-hook-api-endpoint/08-01-PLAN.md
+Last session: 2026-06-01T05:46:05.277Z
+Stopped at: Completed 08-01-PLAN.md
+Resume file: None
