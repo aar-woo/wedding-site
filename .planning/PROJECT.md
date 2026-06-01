@@ -38,13 +38,14 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 - ✓ Guest personalization (`?to=` greeting via `useGuestName`, fallback, personalized tab title) + live countdown to May 30 2027 with per-tick digit animation — Phase 3 (PERS-01..04, CNT-01/02)
 - ✓ Full motion layer: olive-branch `BotanicalSvg` + corner brackets drawing in via `pathLength`, Ken Burns hero zoom (CSS keyframes), and the 10-step orchestrated entrance sequence (variants + staggerChildren), with `prefers-reduced-motion` honored — Phase 4 (DECO-01/02/03, HERO-02, ANIM-01..04)
 - ✓ Durable guest-link identity **contract + library**: locked token spec (`/i/<id>?t=<payload>.<hmac>`, payload `{id,name,iat}`), `node:crypto` HMAC-SHA256 sign/verify lib, secret-free browser decode util (decode-only + graceful fallback), `VITE_`-leak-proof env discipline — Phase 6 (LINK-01/02/03). _Live wiring lands in Phase 8._
-- ✓ Datastore + link-generation tooling: Neon Postgres `guests` table (idempotent migration; `id`/`display_name`/`email UNIQUE`/timestamps/soft-delete + nullable RSVP stubs), and `scripts/generate-links.js` minting durable per-guest URLs from a CSV (email-keyed upsert preserving `id`, soft-delete sync, token signing via the Phase 6 lib, `links.csv` output). Guest list + secret never committed. Live-verified end-to-end against real Neon — Phase 7 (BACK-01, LINK-04). _Frontend hook + `/api` endpoint land in Phase 8._
+- ✓ Datastore + link-generation tooling: Neon Postgres `guests` table (idempotent migration; `id`/`display_name`/`email UNIQUE`/timestamps/soft-delete + nullable RSVP stubs), and `scripts/generate-links.js` minting durable per-guest URLs from a CSV (email-keyed upsert preserving `id`, soft-delete sync, token signing via the Phase 6 lib, `links.csv` output). Guest list + secret never committed. Live-verified end-to-end against real Neon — Phase 7 (BACK-01, LINK-04).
+- ✓ Live frontend wiring + validation endpoint: `useGuestName` resolves the greeting instantly client-side from the `?t=` token (no network round-trip) with `?to=` preview + "Our Beloved Guests" fallback, `/i/:id` route added; `GET /api/guest/:id` Vercel Node function returns `{id, displayName}` from Neon (200/404/405, id-only lookup, soft-deleted→404), `vercel.json` routes `/api/*` ahead of the SPA catch-all; secrets stay server-only (no `VITE_` leak, verified against the built bundle) — Phase 8 (BACK-02, BACK-03). _Deploy-time deep-link routing verified in Phase 9._
 
 ### Active (v2.0)
 
 - [x] Durable per-guest link identity (opaque stable `id`) replacing open `?to=` — _contract Phase 6; real links minted Phase 7; live frontend wiring Phase 8_
-- [ ] Greeting resolves from the link without a public guest list — _Phase 8 (hook rewrite)_
-- [x] Backend + datastore foundation keyed on guest `id` (future RSVP builds on it) — _Neon schema live, Phase 7 (BACK-01); `/api` lookup endpoint Phase 8 (BACK-02)_
+- [x] Greeting resolves from the link without a public guest list — _Phase 8 (token decoded client-side, no guest-list endpoint)_
+- [x] Backend + datastore foundation keyed on guest `id` (future RSVP builds on it) — _Neon schema live Phase 7 (BACK-01); `/api/guest/:id` lookup endpoint Phase 8 (BACK-02)_
 - [x] Link-generation tooling to mint per-guest links — _Phase 7 (LINK-04)_
 - [ ] Responsive and performant on mobile and desktop (carried from v1.0) — _Phase 9_
 - [ ] Deployed live to Vercel with durable links — _Phase 9_
@@ -113,4 +114,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-05-31 after Phase 7 (Datastore Schema & Link-Generation Tooling) — Neon `guests` table live + `generate-links.js` minting durable per-guest URLs from a CSV, verified end-to-end (BACK-01, LINK-04)_
+_Last updated: 2026-06-01 after Phase 8 (Frontend Hook & API Endpoint) — site resolves guest identity from the `?t=` token with no network round-trip on `/i/:id`, and `GET /api/guest/:id` Neon lookup endpoint live with server-only secrets (BACK-02, BACK-03). Only Phase 9 (Mobile Polish & Deploy) remains in v2.0._
