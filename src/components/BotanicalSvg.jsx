@@ -1,28 +1,29 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./BotanicalSvg.module.css";
 
 const EASE = [0.22, 0.61, 0.36, 1];
 
-const svgVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const branchVariants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength: 1,
-    opacity: 1,
-    transition: { duration: 1.0, ease: EASE },
-  },
-};
-
-const dotVariants = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: EASE } },
-};
-
 export default function BotanicalSvg({ flipped = false, opacity = 1 }) {
+  const reduceMotion = useReducedMotion();
+
+  const svgVariants = reduceMotion
+    ? { hidden: {}, visible: {} }
+    : { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } };
+
+  const branchVariants = reduceMotion
+    ? { hidden: { pathLength: 1, opacity: 1 }, visible: { pathLength: 1, opacity: 1 } }
+    : {
+        hidden: { pathLength: 0, opacity: 0 },
+        visible: { pathLength: 1, opacity: 1, transition: { duration: 1.0, ease: EASE } },
+      };
+
+  const dotVariants = reduceMotion
+    ? { hidden: { scale: 1, opacity: 1 }, visible: { scale: 1, opacity: 1 } }
+    : {
+        hidden: { scale: 0, opacity: 0 },
+        visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: EASE } },
+      };
+
   return (
     <div
       className={`${styles.wrapper} ${flipped ? styles.flipped : ""}`}

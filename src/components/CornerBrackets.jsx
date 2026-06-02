@@ -1,19 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import styles from './CornerBrackets.module.css';
 
 const EASE = [0.22, 0.61, 0.36, 1];
 
-const bracketsContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const bracketPathVariants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: { pathLength: 1, opacity: 1, transition: { duration: 0.9, ease: EASE } },
-};
-
-function CornerBracket({ className }) {
+function CornerBracket({ className, pathVariants }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
       <motion.path
@@ -23,19 +13,32 @@ function CornerBracket({ className }) {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeDasharray="0 1"
-        variants={bracketPathVariants}
+        variants={pathVariants}
       />
     </svg>
   );
 }
 
 export default function CornerBrackets() {
+  const reduceMotion = useReducedMotion();
+
+  const bracketsContainerVariants = reduceMotion
+    ? { hidden: {}, visible: {} }
+    : { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
+
+  const bracketPathVariants = reduceMotion
+    ? { hidden: { pathLength: 1, opacity: 1 }, visible: { pathLength: 1, opacity: 1 } }
+    : {
+        hidden: { pathLength: 0, opacity: 0 },
+        visible: { pathLength: 1, opacity: 1, transition: { duration: 0.9, ease: EASE } },
+      };
+
   return (
     <motion.div className={styles.bracketsWrapper} variants={bracketsContainerVariants} aria-hidden="true">
-      <CornerBracket className={styles.topLeft} />
-      <CornerBracket className={`${styles.topRight} ${styles.flipH}`} />
-      <CornerBracket className={`${styles.bottomLeft} ${styles.flipV}`} />
-      <CornerBracket className={`${styles.bottomRight} ${styles.flipBoth}`} />
+      <CornerBracket className={styles.topLeft} pathVariants={bracketPathVariants} />
+      <CornerBracket className={`${styles.topRight} ${styles.flipH}`} pathVariants={bracketPathVariants} />
+      <CornerBracket className={`${styles.bottomLeft} ${styles.flipV}`} pathVariants={bracketPathVariants} />
+      <CornerBracket className={`${styles.bottomRight} ${styles.flipBoth}`} pathVariants={bracketPathVariants} />
     </motion.div>
   );
 }
