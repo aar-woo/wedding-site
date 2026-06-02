@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./SaveTheDatePage.module.css";
 import GuestGreeting from "../components/GuestGreeting.jsx";
 import CountdownTimer from "../components/CountdownTimer.jsx";
@@ -35,31 +35,39 @@ const contentContainerVariants = groupVariants(ACT_3_CONTENT);
 // decorations group, then propagates "visible" down to the two BotanicalSvgs.
 const passthroughVariants = { hidden: {}, visible: {} };
 
-const fadeUpVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: DURATION, ease: EASE } },
-};
-
-const coupleNamesVariants = {
-  hidden: { opacity: 0, y: 12, scale: 0.96 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: DURATION, ease: EASE },
-  },
-};
-
-const dividerVariants = {
-  hidden: { scaleX: 0, opacity: 0 },
-  visible: {
-    scaleX: 1,
-    opacity: 1,
-    transition: { duration: DURATION, ease: EASE },
-  },
-};
-
 function SaveTheDatePage() {
+  const reduceMotion = useReducedMotion();
+
+  const fadeUpVariants = reduceMotion
+    ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+    : {
+        hidden: { opacity: 0, y: 12 },
+        visible: { opacity: 1, y: 0, transition: { duration: DURATION, ease: EASE } },
+      };
+
+  const coupleNamesVariants = reduceMotion
+    ? { hidden: { opacity: 1, y: 0, scale: 1 }, visible: { opacity: 1, y: 0, scale: 1 } }
+    : {
+        hidden: { opacity: 0, y: 12, scale: 0.96 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: DURATION, ease: EASE },
+        },
+      };
+
+  const dividerVariants = reduceMotion
+    ? { hidden: { scaleX: 1, opacity: 1 }, visible: { scaleX: 1, opacity: 1 } }
+    : {
+        hidden: { scaleX: 0, opacity: 0 },
+        visible: {
+          scaleX: 1,
+          opacity: 1,
+          transition: { duration: DURATION, ease: EASE },
+        },
+      };
+
   return (
     <div className={styles.page}>
       <motion.div
