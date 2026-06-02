@@ -145,7 +145,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The full entrance animation sequence runs without visible jank on a mid-range mobile device (no dropped frames on the botanical draw-in or countdown tick)
   3. The site is accessible at a live `vercel.app` URL, served from a Git-connected Vercel project, with the Neon DB integration and `GUEST_TOKEN_SECRET` configured as production environment variables
   4. At least one real generated guest link (from `links.csv`) opens in a browser, shows the personalized greeting, and the `GET /api/guest/:id` endpoint returns 200 — the full v2.0 stack verified end-to-end in production
-**Plans**: TBD
+**Plans**: 3 plans (2 waves)
+- [ ] 09-01-PLAN.md — Mobile 375px one-screen fit: tighten base-block CSS, no scroll/overflow/clip (EXP-01)
+- [ ] 09-02-PLAN.md — Reduced-motion across the full sequence (snap pathLength + fadeUp/scale) + jank check (EXP-02)
+- [ ] 09-03-PLAN.md — Deploy to Vercel + Neon, regenerate links.csv, production end-to-end verification (DEPLOY-01)
 **UI hint**: yes
 
 ## Progress
@@ -163,7 +166,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
 | 8. Frontend Hook & API Endpoint | 2/2 | Complete   | 2026-06-01 |
-| 9. Mobile Polish & Deploy | 0/TBD | Not started | — |
+| 9. Mobile Polish & Deploy | 0/3 | Planned | — |
 
 ## Backlog
 
