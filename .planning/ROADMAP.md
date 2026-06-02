@@ -166,7 +166,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
 | 8. Frontend Hook & API Endpoint | 2/2 | Complete   | 2026-06-01 |
-| 9. Mobile Polish & Deploy | 0/3 | Planned | — |
+| 9. Mobile Polish & Deploy | 0/3 | Planned    |  |
 
 ## Backlog
 
@@ -174,7 +174,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 
 **Goal:** Periodically re-trigger the olive-branch `BotanicalSvg` draw-in animation on a 7-second interval (loop the `pathLength` draw so the branches redraw every 7s) rather than animating only once on page load. Must stay within the `prefers-reduced-motion` guard (no looping redraw when reduced motion is requested).
 **Requirements:** TBD
-**Plans:** 2/2 plans complete
+**Plans:** 0/3 plans executed
 
 Plans:
 - [ ] TBD (promote with /gsd:review-backlog when ready)

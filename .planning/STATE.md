@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Active
-status: verifying
-stopped_at: Phase 9 context gathered
-last_updated: "2026-06-02T04:11:57.846Z"
-last_activity: 2026-06-01
+status: executing
+stopped_at: Completed 09-01-PLAN.md
+last_updated: "2026-06-02T05:50:11.376Z"
+last_activity: 2026-06-02
 progress:
   total_phases: 10
   completed_phases: 7
-  total_plans: 13
+  total_plans: 16
   completed_plans: 13
   percent: 0
 ---
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-31)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
-**Current focus:** Phase 08 — frontend-hook-api-endpoint
+**Current focus:** Phase 09 — mobile-polish-deploy
 
 ## Current Position
 
-Phase: 999.1
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-06-01
+Phase: 09 (mobile-polish-deploy) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-06-02
 
 Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 complete)
 
@@ -61,6 +61,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 07 P03 | 4 | 3 tasks | 2 files |
 | Phase 08 P01 | 70s | 2 tasks | 2 files |
 | Phase 08 P02 | 112s | 3 tasks | 3 files |
+| Phase 09 P01 | 91s | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -101,6 +102,8 @@ Recent decisions affecting current work:
 - [Phase 08]: App.jsx Routes: /i/:id (durable identity) + /* catch-all both render SaveTheDatePage inside MotionConfig; import from 'react-router' (not react-router-dom)
 - [Phase 08]: Legacy handler signature used for api/guest/[id].js — req.query.id simpler than Web API URL parsing for a single bracket-param endpoint
 - [Phase 08]: Criterion #4 (cold deep-link /i/:id -> SPA not 404) deferred to Phase 9 deploy verification — not testable locally without Vercel CDN
+- [Phase 09]: Raised botanicalPair bottom to 220px (within 200-240px range) to clear contentBlock top edge on 375x667 — botanicals flank couple-name area without overlapping date/countdown text
+- [Phase 09]: Base-block-only edits (topGroup padding, coupleNames/date/location margins, contentBlock padding, countdown margin) fit 375x667 with no font-size reductions — font reduction was last resort and not needed
 
 ### Pending Todos
 
@@ -119,6 +122,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-02T04:11:57.837Z
-Stopped at: Phase 9 context gathered
-Resume file: .planning/phases/09-mobile-polish-deploy/09-CONTEXT.md
+Last session: 2026-06-02T05:50:11.373Z
+Stopped at: Completed 09-01-PLAN.md
+Resume file: None
