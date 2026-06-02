@@ -57,7 +57,7 @@ Requirements for initial release. Each maps to roadmap phases.
 *Defined in v1.0, not completed there — carried forward into the v2.0 milestone (deploy now lands with durable links + serverless).*
 
 - [x] **EXP-01**: The layout is responsive and legible on mobile and desktop _(v2.0)_
-- [ ] **EXP-02**: Animations run smoothly without jank on a typical mobile device _(v2.0)_
+- [x] **EXP-02**: Animations run smoothly without jank on a typical mobile device _(v2.0)_
 - [ ] **DEPLOY-01**: The site deploys live to Vercel (Git-connected, vercel.app URL), including the SPA build, the `/api` serverless function(s), and the Neon datastore env config _(v2.0)_
 
 ## v2.0 Milestone Requirements
@@ -138,7 +138,7 @@ Which phases cover which requirements. Populated during roadmap creation.
 | ANIM-03     | Phase 4 | Complete |
 | ANIM-04     | Phase 4 | Complete |
 | EXP-01      | Phase 9 | Complete |
-| EXP-02      | Phase 9 | Pending |
+| EXP-02      | Phase 9 | Complete |
 | DEPLOY-01   | Phase 9 | Pending |
 | LINK-01     | Phase 6 | Complete |
 | LINK-02     | Phase 6 | Complete |

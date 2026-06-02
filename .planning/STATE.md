@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Active
 status: executing
-stopped_at: Completed 09-01-PLAN.md
-last_updated: "2026-06-02T05:50:11.376Z"
+stopped_at: Completed 09-02-PLAN.md
+last_updated: "2026-06-02T05:50:52.573Z"
 last_activity: 2026-06-02
 progress:
   total_phases: 10
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-05-31)
 ## Current Position
 
 Phase: 09 (mobile-polish-deploy) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-06-02
 
@@ -62,6 +62,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 phases; v1.0 Phases 1–4 co
 | Phase 08 P01 | 70s | 2 tasks | 2 files |
 | Phase 08 P02 | 112s | 3 tasks | 3 files |
 | Phase 09 P01 | 91s | 2 tasks | 2 files |
+| Phase 09-mobile-polish-deploy P02 | 3min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -104,6 +105,9 @@ Recent decisions affecting current work:
 - [Phase 08]: Criterion #4 (cold deep-link /i/:id -> SPA not 404) deferred to Phase 9 deploy verification — not testable locally without Vercel CDN
 - [Phase 09]: Raised botanicalPair bottom to 220px (within 200-240px range) to clear contentBlock top edge on 375x667 — botanicals flank couple-name area without overlapping date/countdown text
 - [Phase 09]: Base-block-only edits (topGroup padding, coupleNames/date/location margins, contentBlock padding, countdown margin) fit 375x667 with no font-size reductions — font reduction was last resort and not needed
+- [Phase Phase 09-02]: Use useReducedMotion() at variant layer (not CSS hacks) for reduced-motion snap-in per CLAUDE.md animation rules
+- [Phase Phase 09-02]: Approach B: override fadeUpVariants/coupleNamesVariants/dividerVariants in SaveTheDatePage for full snap-in (opacity=1 in hidden state), not just pathLength
+- [Phase Phase 09-02]: Lift useReducedMotion to CornerBrackets default export; thread bracketPathVariants as prop to CornerBracket helper — hooks cannot be called in non-component functions
 
 ### Pending Todos
 
@@ -122,6 +126,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-02T05:50:11.373Z
-Stopped at: Completed 09-01-PLAN.md
+Last session: 2026-06-02T05:50:52.570Z
+Stopped at: Completed 09-02-PLAN.md
 Resume file: None
