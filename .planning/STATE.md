@@ -1,36 +1,35 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.0
-milestone_name: — Active
-status: executing
-stopped_at: Completed 09-03 (deploy) — Phase 09 complete
-last_updated: "2026-06-03T03:30:00.000Z"
+milestone_name: Guest Identity & Deploy — SHIPPED
+status: v2.0 milestone complete — archived + tagged; awaiting next milestone
+stopped_at: Completed v2.0 milestone (archived to milestones/)
+last_updated: "2026-06-03T04:00:00.000Z"
 last_activity: 2026-06-03
 progress:
   total_phases: 10
   completed_phases: 8
   total_plans: 16
-  completed_plans: 14
-  percent: 80
+  completed_plans: 16
+  percent: 100
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-31)
+See: .planning/PROJECT.md (updated 2026-06-03 after v2.0 completion)
 
 **Core value:** When a guest opens their link, they feel the warmth and elegance of the invitation immediately — a beautiful, personalized, smoothly-animated reveal of "Aaron & Rina · May 30, 2027 · Oahu, Hawaii."
-**Current focus:** Phase 09 — mobile-polish-deploy
+**Current focus:** Planning next milestone (expected: RSVP flow) — run `/gsd:new-milestone`
 
 ## Current Position
 
-Phase: 09 (mobile-polish-deploy) — COMPLETE
-Plan: 3 of 3 (all summarized)
-Status: Phase 09 shipped live — site deployed at wedding-site-ten-omega.vercel.app
-Last activity: 2026-06-03
+Milestone: v2.0 Guest Identity & Deploy — SHIPPED 2026-06-03 (archived + tagged)
+Live: https://wedding-site-ten-omega.vercel.app
+Next: define next milestone via /gsd:new-milestone
 
-Progress: [████████░░] 80% (v2.0 phases; v1.0 Phases 1–4 complete)
+Progress: [██████████] v2.0 100% (Phases 6–9 complete; v1.0 Phases 1–4 complete; Phase 5 superseded)
 
 ## Performance Metrics
 
@@ -112,7 +111,8 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Plan Phase 6: Identity Token Contract (next step)
+- Define next milestone via `/gsd:new-milestone` (expected: RSVP flow on the v2.0 identity foundation)
+- (Optional debt) Backfill Phase 9 `VERIFICATION.md` + run `/gsd:validate-phase 07/08/09` to close Nyquist gaps
 
 ### Blockers/Concerns
 

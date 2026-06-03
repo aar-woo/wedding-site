@@ -3,11 +3,12 @@
 ## What This Is
 
 An animated, single-page "save the date" website for Aaron & Rina's wedding on
-May 30, 2027 in Oahu, Hawaii. Guests open a personalized link (e.g.
-`/?to=The+Johnson+Family`) and see their name woven into an elegant, motion-rich
-forest-and-gold scene with the couple's names, the date, the location, and a
-live countdown. It is a keepsake-quality announcement, not a functional RSVP or
-events portal.
+May 30, 2027 in Oahu, Hawaii. Guests open a durable, unguessable personalized
+link (e.g. `/i/<id>?t=<signed-token>`) and see their name woven into an elegant,
+motion-rich forest-and-gold scene with the couple's names, the date, the location,
+and a live countdown. Each link is backed by a persistent per-guest identity in
+Neon Postgres (the foundation a future RSVP flow reuses). It is a keepsake-quality
+announcement; the RSVP form itself is a follow-up milestone.
 
 ## Core Value
 
@@ -15,19 +16,20 @@ When a guest opens their link, they feel the warmth and elegance of the
 invitation immediately — a beautiful, personalized, smoothly-animated reveal of
 "Rina & Aaron· May 30, 2027 · Oahu, Hawaii."
 
-## Current Milestone: v2.0 Personalized Guest-Link Identity + RSVP Foundation
+## Current State
 
-**Goal:** Replace the open `?to=` greeting with a durable, hard-to-self-edit per-guest link backed by persistent identity, lay the backend/datastore foundation a future RSVP flow will reuse, and deploy the save-the-date live on Vercel with those durable links.
+**Shipped: v2.0 Guest Identity & Deploy** (2026-06-03) — live at `https://wedding-site-ten-omega.vercel.app`.
 
-**Target features:**
-- Durable per-guest link identity — opaque, stable `id` in the URL (replaces open `?to=`); the same link later carries RSVP
-- Greeting resolves from the link without exposing a public guest list (display name encoded in the link)
-- Backend + datastore foundation (Vercel serverless + datastore — choice TBD in research) keyed on guest `id`
-- Link-generation tooling to mint per-guest links from the guest list
-- Responsive/mobile polish (carried from v1.0 Phase 5 — EXP-01/02)
-- Vercel deploy with durable links (DEPLOY-01), sequenced last
+The site replaced the open `?to=` greeting with durable, unguessable per-guest links (`/i/<id>?t=<signed-token>`) backed by a Neon Postgres identity record, exposed a Vercel serverless `GET /api/guest/:id` lookup, and ships responsive + reduced-motion-polished. The signed token decodes the display name client-side for an instant greeting; the frontend then fetches the authoritative DB name by `id` with graceful fallback. All 10 v2.0 requirements satisfied; integration verified clean end-to-end in production.
 
-**Scope note:** RSVP foundation only — the actual RSVP form/flow is a follow-up milestone, but the identity scheme must support it. This milestone supersedes v1.0 Phase 5 (its polish + deploy fold in here); v1.0 is not deployed separately.
+**Stack reality:** React 19 + React Router v7 (`react-router` import) + Vite + Framer Motion + CSS Modules; Neon Postgres; Vercel serverless (Node runtime) under `/api`. Guest list + signing secret live only locally / in server-only env vars — never committed, never `VITE_`-prefixed.
+
+### Next Milestone Goals (not yet started)
+
+- **RSVP flow (RSVP-01/RSVP-02)** — let a guest accept/decline (+ guest count, meal, notes) via their existing personalized link, captured to the Neon store keyed on the same opaque `id`. The v2.0 identity + serverless foundation was built specifically to carry this with no migration (RSVP columns already reserved).
+- Possible: event-details pages (schedule, travel, registry, gallery) — DET-01..04.
+
+Run `/gsd:new-milestone` to define requirements + roadmap for the next cycle.
 
 ## Requirements
 
@@ -39,16 +41,14 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 - ✓ Full motion layer: olive-branch `BotanicalSvg` + corner brackets drawing in via `pathLength`, Ken Burns hero zoom (CSS keyframes), and the 10-step orchestrated entrance sequence (variants + staggerChildren), with `prefers-reduced-motion` honored — Phase 4 (DECO-01/02/03, HERO-02, ANIM-01..04)
 - ✓ Durable guest-link identity **contract + library**: locked token spec (`/i/<id>?t=<payload>.<hmac>`, payload `{id,name,iat}`), `node:crypto` HMAC-SHA256 sign/verify lib, secret-free browser decode util (decode-only + graceful fallback), `VITE_`-leak-proof env discipline — Phase 6 (LINK-01/02/03). _Live wiring lands in Phase 8._
 - ✓ Datastore + link-generation tooling: Neon Postgres `guests` table (idempotent migration; `id`/`display_name`/`email UNIQUE`/timestamps/soft-delete + nullable RSVP stubs), and `scripts/generate-links.js` minting durable per-guest URLs from a CSV (email-keyed upsert preserving `id`, soft-delete sync, token signing via the Phase 6 lib, `links.csv` output). Guest list + secret never committed. Live-verified end-to-end against real Neon — Phase 7 (BACK-01, LINK-04).
-- ✓ Live frontend wiring + validation endpoint: `useGuestName` resolves the greeting instantly client-side from the `?t=` token (no network round-trip) with `?to=` preview + "Our Beloved Guests" fallback, `/i/:id` route added; `GET /api/guest/:id` Vercel Node function returns `{id, displayName}` from Neon (200/404/405, id-only lookup, soft-deleted→404), `vercel.json` routes `/api/*` ahead of the SPA catch-all; secrets stay server-only (no `VITE_` leak, verified against the built bundle) — Phase 8 (BACK-02, BACK-03). _Deploy-time deep-link routing verified in Phase 9._
+- ✓ Live frontend wiring + validation endpoint: `useGuestName` resolves the greeting instantly client-side from the `?t=` token (no network round-trip) with `?to=` preview + "Our Beloved Guests" fallback, `/i/:id` route added; `GET /api/guest/:id` Vercel Node function returns `{id, displayName}` from Neon (200/404/405, id-only lookup, soft-deleted→404), `vercel.json` routes `/api/*` ahead of the SPA catch-all; secrets stay server-only (no `VITE_` leak, verified against the built bundle) — Phase 8 (BACK-02, BACK-03).
+- ✓ Mobile polish + reduced-motion: responsive one-screen layout at 375px, `useReducedMotion` snap-in across BotanicalSvg/CornerBrackets/entrance sequence — Phase 9 (EXP-01, EXP-02).
+- ✓ Live Vercel deploy: Git-connected SPA + `/api` serverless + Neon, durable `links.csv` against the live domain, cold `/i/:id`→200 and `GET /api/guest/:id`→200 verified in production — Phase 9 (DEPLOY-01).
+- ✓ Authoritative DB name on the frontend: `useGuestName` fetches `/api/guest/:id` and overrides the cached token name (source of truth) with graceful fallback — post-v2.0 quick task 260602-nu0.
 
-### Active (v2.0)
+### Active
 
-- [x] Durable per-guest link identity (opaque stable `id`) replacing open `?to=` — _contract Phase 6; real links minted Phase 7; live frontend wiring Phase 8_
-- [x] Greeting resolves from the link without a public guest list — _Phase 8 (token decoded client-side, no guest-list endpoint)_
-- [x] Backend + datastore foundation keyed on guest `id` (future RSVP builds on it) — _Neon schema live Phase 7 (BACK-01); `/api/guest/:id` lookup endpoint Phase 8 (BACK-02)_
-- [x] Link-generation tooling to mint per-guest links — _Phase 7 (LINK-04)_
-- [ ] Responsive and performant on mobile and desktop (carried from v1.0) — _Phase 9_
-- [ ] Deployed live to Vercel with durable links — _Phase 9_
+(No active milestone — v2.0 shipped. Next milestone requirements defined via `/gsd:new-milestone`; expected focus: RSVP flow building on the v2.0 identity foundation.)
 
 ### Out of Scope
 
@@ -76,22 +76,27 @@ invitation immediately — a beautiful, personalized, smoothly-animated reveal o
 
 ## Constraints
 
-- **Tech stack**: React 18 + Vite + Framer Motion + React Router v6 + CSS Modules — no UI libraries, custom design only.
+- **Tech stack**: React 19 + Vite + Framer Motion + React Router v7 (`react-router` import, not `react-router-dom`) + CSS Modules — no UI libraries, custom design only. _(CLAUDE.md still says React 18 / Router v6 — superseded; the installed/shipped stack is 19 / v7.)_
 - **Fonts**: Cormorant Garamond (display) + Jost (body) via Google Fonts. Never Inter, Roboto, or system fonts.
 - **Design system**: Background `#0B1610`, gold `#BF9B5A`, gold-light `#D4B57A`, cream `#EAE0CB`, muted `#72685A`. Design values live in CSS Module variables — no inline style values.
-- **Animation**: Use `variants` + `staggerChildren` (no hardcoded per-element delays); min 0.8s per element; ease `[0.22, 0.61, 0.36, 1]`.
-- **Hosting**: Static build deployed to Vercel.
-- **Personalization**: Read-only via `?to=` query param; no stored guest list.
+- **Animation**: Use `variants` + `staggerChildren` (no hardcoded per-element delays); min 0.8s per element; ease `[0.22, 0.61, 0.36, 1]`; honor `prefers-reduced-motion`.
+- **Hosting**: Vercel — SPA build + `/api` Node serverless functions (NOT Edge) + Neon Postgres.
+- **Personalization**: Durable per-guest links (`/i/<id>?t=<signed-token>`) backed by a stored Neon guest record keyed on opaque `id`. _(Supersedes the v1.0 "read-only `?to=`, no stored guest list" constraint.)_ No public guest-list endpoint — a link only resolves its own guest.
+- **Secrets**: `GUEST_TOKEN_SECRET` + `DATABASE_URL` are server-only env vars, never `VITE_`-prefixed; guest list never committed.
 
 ## Key Decisions
 
 | Decision                                                                        | Rationale                                                      | Outcome   |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------- |
-| Scope = save-the-date only                                                      | Ship the announcement first; RSVP/details are later milestones | — Pending |
-| Use existing hero PNG as-is                                                     | Image already in repo; real photo confirmed                    | — Pending |
-| Default content (location "Oahu, Hawaii", footer "Formal invitation to follow") | User opted for sensible defaults; easy to swap later           | — Pending |
-| Deploy target: Vercel                                                           | Zero-config static hosting for a Vite SPA                      | — Pending |
+| Scope = save-the-date only                                                      | Ship the announcement first; RSVP/details are later milestones | ✓ Good (v2.0 shipped; RSVP next) |
+| Use existing hero PNG as-is                                                     | Image already in repo; real photo confirmed                    | ✓ Good    |
+| Default content (location "Oahu, Hawaii", footer "Formal invitation to follow") | User opted for sensible defaults; easy to swap later           | ✓ Good    |
+| Deploy target: Vercel                                                           | Zero-config hosting for Vite SPA + Node serverless `/api`      | ✓ Good (live v2.0) |
 | `CLAUDE.md` is the binding design contract                                      | Detailed spec already authored; avoid re-deriving design       | ✓ Good    |
+| Signed-name link scheme: opaque nanoid `id` + HMAC-SHA256 payload, client-decoded | Durable identity + instant greeting with no public guest list; same link carries future RSVP | ✓ Good (v2.0) |
+| Neon Postgres via `@neondatabase/serverless` (Node runtime, not Edge)           | Relational store for future RSVP columns; no inactivity pause; Edge deprecated | ✓ Good (v2.0) |
+| Production `DATABASE_URL` set manually; Neon Vercel integration removed          | The integration injected a wrong/empty DB causing 500s; manual env var is the durable fix | ⚠️ Revisit (re-evaluate if integration matures) |
+| Frontend fetches authoritative DB name by `id` (token name as instant fallback) | DB is source of truth; corrected names propagate to already-sent links | ✓ Good (quick task 260602-nu0) |
 
 ## Evolution
 
@@ -114,4 +119,4 @@ This document evolves at phase transitions and milestone boundaries.
 
 ---
 
-_Last updated: 2026-06-01 after Phase 8 (Frontend Hook & API Endpoint) — site resolves guest identity from the `?t=` token with no network round-trip on `/i/:id`, and `GET /api/guest/:id` Neon lookup endpoint live with server-only secrets (BACK-02, BACK-03). Only Phase 9 (Mobile Polish & Deploy) remains in v2.0._
+_Last updated: 2026-06-03 after **v2.0 Guest Identity & Deploy** milestone completion — site shipped live at wedding-site-ten-omega.vercel.app with durable signed per-guest links, Neon identity store, serverless `/api/guest/:id`, and mobile/reduced-motion polish. All 10 v2.0 requirements satisfied. Next: `/gsd:new-milestone` (expected: RSVP flow)._
