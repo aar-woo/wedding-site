@@ -58,7 +58,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **EXP-01**: The layout is responsive and legible on mobile and desktop _(v2.0)_
 - [x] **EXP-02**: Animations run smoothly without jank on a typical mobile device _(v2.0)_
-- [ ] **DEPLOY-01**: The site deploys live to Vercel (Git-connected, vercel.app URL), including the SPA build, the `/api` serverless function(s), and the Neon datastore env config _(v2.0)_
+- [x] **DEPLOY-01**: The site deploys live to Vercel (Git-connected, vercel.app URL), including the SPA build, the `/api` serverless function(s), and the Neon datastore env config _(v2.0)_ — delivered + verified live 2026-06-03 (cold /i/:id → 200, /api/guest/:id → 200, greeting renders)
 
 ## v2.0 Milestone Requirements
 
@@ -139,7 +139,7 @@ Which phases cover which requirements. Populated during roadmap creation.
 | ANIM-04     | Phase 4 | Complete |
 | EXP-01      | Phase 9 | Complete |
 | EXP-02      | Phase 9 | Complete |
-| DEPLOY-01   | Phase 9 | Pending |
+| DEPLOY-01   | Phase 9 | Complete |
 | LINK-01     | Phase 6 | Complete |
 | LINK-02     | Phase 6 | Complete |
 | LINK-03     | Phase 6 | Complete |
