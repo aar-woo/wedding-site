@@ -41,20 +41,6 @@ export default async function handler(req, res) {
   } catch (err) {
     // Log error without PII
     console.error(`DB error for guest lookup id=${id}:`, err.message);
-    // TEMP DIAGNOSTIC (09-03 debug) — secret-safe: host only, names only, redacted message. REMOVE after diagnosis.
-    let dbHost = 'NO_DATABASE_URL';
-    try { dbHost = new URL(process.env.DATABASE_URL).host; } catch { /* unset */ }
-    const dbEnvNames = Object.keys(process.env)
-      .filter((k) => /DATABASE|POSTGRES|PG|NEON/i.test(k))
-      .sort();
-    return res.status(500).json({
-      error: 'internal server error',
-      diag: {
-        dbHost,
-        dbEnvNames,
-        errName: err?.name ?? null,
-        errMessage: String(err?.message ?? '').replace(/\/\/[^@\s]*@/g, '//[REDACTED]@'),
-      },
-    });
+    return res.status(500).json({ error: 'internal server error' });
   }
 }
