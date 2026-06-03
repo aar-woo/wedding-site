@@ -27,7 +27,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 6: Identity Token Contract** - URL shape, signed token format, env var naming, and token sign/verify library locked before any code is committed (completed 2026-05-31)
 - [ ] **Phase 7: Datastore Schema & Link-Generation Tooling** - Neon Postgres provisioned, guest schema migrated, local script mints real shareable links
 - [x] **Phase 8: Frontend Hook & API Endpoint** - Guest-name hook updated to parse signed token; Vercel serverless GET endpoint wired; vercel.json deployed (completed 2026-06-01)
-- [ ] **Phase 9: Mobile Polish & Deploy** - Responsive layout verified on mobile, site deployed live to Vercel with durable personalized links
+- [x] **Phase 9: Mobile Polish & Deploy** - Responsive layout verified on mobile, site deployed live to Vercel with durable personalized links (completed 2026-06-03)
 
 ## Phase Details
 
@@ -166,7 +166,7 @@ v1.0 phases complete (1–4). v2.0 phases execute in numeric order: 6 → 7 → 
 | 6. Identity Token Contract | 1/1 | Complete   | 2026-05-31 |
 | 7. Datastore Schema & Link-Generation | 1/3 | In Progress|  |
 | 8. Frontend Hook & API Endpoint | 2/2 | Complete   | 2026-06-01 |
-| 9. Mobile Polish & Deploy | 0/3 | Planned    |  |
+| 9. Mobile Polish & Deploy | 3/3 | Complete   | 2026-06-03 |
 
 ## Backlog
 
