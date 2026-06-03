@@ -108,6 +108,7 @@ Recent decisions affecting current work:
 - [Phase Phase 09-02]: Use useReducedMotion() at variant layer (not CSS hacks) for reduced-motion snap-in per CLAUDE.md animation rules
 - [Phase Phase 09-02]: Approach B: override fadeUpVariants/coupleNamesVariants/dividerVariants in SaveTheDatePage for full snap-in (opacity=1 in hidden state), not just pathLength
 - [Phase Phase 09-02]: Lift useReducedMotion to CornerBrackets default export; thread bracketPathVariants as prop to CornerBracket helper — hooks cannot be called in non-component functions
+- [quick-260602-nu0]: dbOverride stores { id, displayName } not bare string — avoids synchronous setState in effect (ESLint rule), stale names auto-invalidated by id comparison
 
 ### Pending Todos
 
@@ -123,9 +124,10 @@ None.
 |---|-------------|------|--------|-----------|
 | 260529-os0 | Update the styling of the hero image card on desktop view to be a larger greeting card view, not iphone sized card. | 2026-05-30 | 64f6753 | [260529-os0-update-the-styling-of-the-hero-image-car](./quick/260529-os0-update-the-styling-of-the-hero-image-car/) |
 | 260530-oto | Move the "Save the Date" label to the very top of the hero container, with spacing between it and the rest of the content block | 2026-05-31 | c3ce4f0 | [260530-oto-move-the-save-the-date-label-to-the-very](./quick/260530-oto-move-the-save-the-date-label-to-the-very/) |
+| 260602-nu0 | Wire frontend to fetch authoritative guest name from DB via /api/guest/:id — abort-safe DB override in useGuestName with instant token-name render | 2026-06-02 | 2e5c80b | [260602-nu0-wire-frontend-to-fetch-authoritative-gue](./quick/260602-nu0-wire-frontend-to-fetch-authoritative-gue/) |
 
 ## Session Continuity
 
-Last session: 2026-06-02T05:50:52.570Z
-Stopped at: Completed 09-02-PLAN.md
+Last session: 2026-06-02T00:00:00.000Z
+Stopped at: Completed quick task 260602-nu0
 Resume file: None
