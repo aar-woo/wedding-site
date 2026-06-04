@@ -27,6 +27,9 @@ dist-ssr
 # Original full-size PNGs (optimized to WebP in public/images)
 image-originals/
 
+# Superpowers visual-brainstorm scratch files
+.superpowers/
+
 # Private guest data — NEVER commit (real names + emails + personalized links)
 guests.csv
 links.csv
