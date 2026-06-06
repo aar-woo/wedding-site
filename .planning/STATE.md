@@ -125,9 +125,10 @@ None.
 | 260529-os0 | Update the styling of the hero image card on desktop view to be a larger greeting card view, not iphone sized card. | 2026-05-30 | 64f6753 | [260529-os0-update-the-styling-of-the-hero-image-car](./quick/260529-os0-update-the-styling-of-the-hero-image-car/) |
 | 260530-oto | Move the "Save the Date" label to the very top of the hero container, with spacing between it and the rest of the content block | 2026-05-31 | c3ce4f0 | [260530-oto-move-the-save-the-date-label-to-the-very](./quick/260530-oto-move-the-save-the-date-label-to-the-very/) |
 | 260602-nu0 | Wire frontend to fetch authoritative guest name from DB via /api/guest/:id — abort-safe DB override in useGuestName with instant token-name render | 2026-06-02 | 2e5c80b | [260602-nu0-wire-frontend-to-fetch-authoritative-gue](./quick/260602-nu0-wire-frontend-to-fetch-authoritative-gue/) |
+| 260605-s5q | Make BotanicalSvg drawing animation loop every 7s (ambient redraw) via keyframe arrays with opacity fade reset; reduced-motion static unchanged | 2026-06-06 | 17d0af5 | [260605-s5q-make-the-botanicalsvg-drawing-animation-](./quick/260605-s5q-make-the-botanicalsvg-drawing-animation-/) |
 
 ## Session Continuity
 
-Last session: 2026-06-02T00:00:00.000Z
-Stopped at: Completed quick task 260602-nu0
+Last session: 2026-06-06T06:19:46Z
+Stopped at: Completed quick task 260605-s5q (Task 1 auto; Task 2 checkpoint:human-verify pending)
 Resume file: None
