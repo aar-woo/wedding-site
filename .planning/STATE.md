@@ -128,10 +128,10 @@ None.
 | 260530-oto | Move the "Save the Date" label to the very top of the hero container, with spacing between it and the rest of the content block | 2026-05-31 | c3ce4f0 | [260530-oto-move-the-save-the-date-label-to-the-very](./quick/260530-oto-move-the-save-the-date-label-to-the-very/) |
 | 260602-nu0 | Wire frontend to fetch authoritative guest name from DB via /api/guest/:id — abort-safe DB override in useGuestName with instant token-name render | 2026-06-02 | 2e5c80b | [260602-nu0-wire-frontend-to-fetch-authoritative-gue](./quick/260602-nu0-wire-frontend-to-fetch-authoritative-gue/) |
 | 260605-s5q | Make BotanicalSvg drawing animation loop every 7s (ambient redraw) via keyframe arrays with opacity fade reset; reduced-motion static unchanged | 2026-06-06 | 4df6832 | [260605-s5q-make-the-botanicalsvg-drawing-animation-](./quick/260605-s5q-make-the-botanicalsvg-drawing-animation-/) |
-| 260606-gy7 | Add email send step: send-invites CLI + Gmail SMTP via Nodemailer + invited_at DB column + pure email-template module + TDD tests | 2026-06-06 | f7b01aa | [260606-gy7-add-email-send-step-for-guest-invitation](./quick/260606-gy7-add-email-send-step-for-guest-invitation/) |
+| 260606-gy7 | Add email send step: send-invites CLI + Gmail SMTP via Nodemailer + invited_at DB column + pure email-template module + TDD tests (full mode, verified 7/7; dry-run confirmed live) | 2026-06-06 | 9795df1 | [260606-gy7-add-email-send-step-for-guest-invitation](./quick/260606-gy7-add-email-send-step-for-guest-invitation/) |
 
 ## Session Continuity
 
 Last session: 2026-06-06T07:16:48Z
-Stopped at: Completed quick task 260606-gy7 (3 tasks: migration ALTER, TDD email-template, send-invites CLI)
+Stopped at: Completed quick task 260606-gy7 (full mode: 3 tasks + plan-check + verify 7/7; invited_at migration applied to live Neon; --dry-run confirmed). Real send awaits user's Gmail app password for rinaaron5@gmail.com.
 Resume file: None
