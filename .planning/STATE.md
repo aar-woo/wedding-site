@@ -108,6 +108,8 @@ Recent decisions affecting current work:
 - [Phase Phase 09-02]: Approach B: override fadeUpVariants/coupleNamesVariants/dividerVariants in SaveTheDatePage for full snap-in (opacity=1 in hidden state), not just pathLength
 - [Phase Phase 09-02]: Lift useReducedMotion to CornerBrackets default export; thread bracketPathVariants as prop to CornerBracket helper — hooks cannot be called in non-component functions
 - [quick-260602-nu0]: dbOverride stores { id, displayName } not bare string — avoids synchronous setState in effect (ESLint rule), stale names auto-invalidated by id comparison
+- [quick-260606-gy7]: Inline styles in email-template.js are the one legitimate exception to CLAUDE.md no-inline-styles rule — email clients require table-based layouts with inline styles (CSS Modules target React app, not transactional email)
+- [quick-260606-gy7]: invited_at set ONLY after confirmed SMTP success — failed send leaves guest un-marked for retry on next run (idempotency per EMAIL-01)
 
 ### Pending Todos
 
@@ -126,9 +128,10 @@ None.
 | 260530-oto | Move the "Save the Date" label to the very top of the hero container, with spacing between it and the rest of the content block | 2026-05-31 | c3ce4f0 | [260530-oto-move-the-save-the-date-label-to-the-very](./quick/260530-oto-move-the-save-the-date-label-to-the-very/) |
 | 260602-nu0 | Wire frontend to fetch authoritative guest name from DB via /api/guest/:id — abort-safe DB override in useGuestName with instant token-name render | 2026-06-02 | 2e5c80b | [260602-nu0-wire-frontend-to-fetch-authoritative-gue](./quick/260602-nu0-wire-frontend-to-fetch-authoritative-gue/) |
 | 260605-s5q | Make BotanicalSvg drawing animation loop every 7s (ambient redraw) via keyframe arrays with opacity fade reset; reduced-motion static unchanged | 2026-06-06 | 4df6832 | [260605-s5q-make-the-botanicalsvg-drawing-animation-](./quick/260605-s5q-make-the-botanicalsvg-drawing-animation-/) |
+| 260606-gy7 | Add email send step: send-invites CLI + Gmail SMTP via Nodemailer + invited_at DB column + pure email-template module + TDD tests | 2026-06-06 | f7b01aa | [260606-gy7-add-email-send-step-for-guest-invitation](./quick/260606-gy7-add-email-send-step-for-guest-invitation/) |
 
 ## Session Continuity
 
-Last session: 2026-06-06T06:19:46Z
-Stopped at: Completed quick task 260605-s5q (Task 1 auto; Task 2 checkpoint:human-verify approved 2026-06-06)
+Last session: 2026-06-06T07:16:48Z
+Stopped at: Completed quick task 260606-gy7 (3 tasks: migration ALTER, TDD email-template, send-invites CLI)
 Resume file: None
