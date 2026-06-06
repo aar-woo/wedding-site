@@ -57,9 +57,9 @@ Key design decisions:
 
 **Build verification:** `npm run build` passed (436 modules, no errors).
 
-### Task 2: Human Verification Checkpoint (PENDING — awaiting human)
+### Task 2: Human Verification Checkpoint (APPROVED — 2026-06-06)
 
-**Status:** Blocked on human visual verification. This checkpoint requires a human to observe the browser.
+**Status:** Approved by user. Botanical 7s redraw loop and reduced-motion static behavior confirmed in browser.
 
 **How to verify:**
 1. Run `npm run dev` and open the local URL.
