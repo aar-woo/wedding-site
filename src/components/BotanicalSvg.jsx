@@ -14,14 +14,38 @@ export default function BotanicalSvg({ flipped = false, opacity = 1 }) {
     ? { hidden: { pathLength: 1, opacity: 1 }, visible: { pathLength: 1, opacity: 1 } }
     : {
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 1.0, ease: EASE } },
+        // Keyframe loop: draw in → hold drawn → fade + snap back to start a new cycle.
+        // pathLength can't tween 1→0 invisibly via repeatType, so we use a keyframe
+        // array with an opacity fade on the reset tail to make each re-draw clean
+        // (gold strokes fade out rather than appearing to "erase").
+        visible: {
+          pathLength: [0, 1, 1, 0],
+          opacity: [0, 1, 1, 0],
+          transition: {
+            duration: 7,
+            times: [0, 0.14, 0.85, 1],
+            ease: EASE,
+            repeat: Infinity,
+          },
+        },
       };
 
   const dotVariants = reduceMotion
     ? { hidden: { scale: 1, opacity: 1 }, visible: { scale: 1, opacity: 1 } }
     : {
         hidden: { scale: 0, opacity: 0 },
-        visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: EASE } },
+        // Same keyframe-loop treatment as branches; dots pop faster (times[1]=0.06 vs 0.14)
+        // to match the original 0.4s vs 1.0s feel within the 7s cycle.
+        visible: {
+          scale: [0, 1, 1, 0],
+          opacity: [0, 1, 1, 0],
+          transition: {
+            duration: 7,
+            times: [0, 0.06, 0.85, 1],
+            ease: EASE,
+            repeat: Infinity,
+          },
+        },
       };
 
   return (
