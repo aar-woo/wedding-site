@@ -33,3 +33,5 @@ image-originals/
 # Private guest data — NEVER commit (real names + emails + personalized links)
 guests.csv
 links.csv
+
+guests.temp.csv
