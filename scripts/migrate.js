@@ -42,5 +42,6 @@ await sql`ALTER TABLE guests ADD COLUMN IF NOT EXISTS first_seen_at TIMESTAMPTZ`
 await sql`ALTER TABLE guests ADD COLUMN IF NOT EXISTS rsvp_status TEXT`;
 await sql`ALTER TABLE guests ADD COLUMN IF NOT EXISTS rsvp_count INTEGER`;
 await sql`ALTER TABLE guests ADD COLUMN IF NOT EXISTS rsvp_submitted_at TIMESTAMPTZ`;
+await sql`ALTER TABLE guests ADD COLUMN IF NOT EXISTS invited_at TIMESTAMPTZ`;
 
 console.log('Migration complete: guests table ready.');
