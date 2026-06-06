@@ -39,18 +39,23 @@ if (!process.env.DATABASE_URL) {
   process.exit(1);
 }
 
-if (!process.env.GMAIL_USER) {
-  console.error(
-    'GMAIL_USER is not set. Add your Gmail address to .env.local (see .env.example).'
-  );
-  process.exit(1);
-}
+// Gmail credentials are only needed for a real send — --dry-run previews the
+// recipient list (links.csv + DB lookup) without creating an SMTP transport,
+// so guests can be reviewed before a Google App Password is generated.
+if (!isDryRun) {
+  if (!process.env.GMAIL_USER) {
+    console.error(
+      'GMAIL_USER is not set. Add your Gmail address to .env.local (see .env.example).'
+    );
+    process.exit(1);
+  }
 
-if (!process.env.GMAIL_APP_PASSWORD) {
-  console.error(
-    'GMAIL_APP_PASSWORD is not set. Generate a 16-char Google App Password and add it to .env.local (see .env.example).'
-  );
-  process.exit(1);
+  if (!process.env.GMAIL_APP_PASSWORD) {
+    console.error(
+      'GMAIL_APP_PASSWORD is not set. Generate a 16-char Google App Password and add it to .env.local (see .env.example).'
+    );
+    process.exit(1);
+  }
 }
 
 // ---------------------------------------------------------------------------
